@@ -144,6 +144,6 @@ public class Coillection {
 
         System.out.println(n + " is a prime");
 
-
+      // https://leetcode.com/problems/count-primes/description/
     }
 }

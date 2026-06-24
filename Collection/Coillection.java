@@ -145,5 +145,28 @@ public class Coillection {
         System.out.println(n + " is a prime");
 
       // https://leetcode.com/problems/count-primes/description/
+
+     /*
+    public int countPrimes(int n) {
+        n--;
+        int [] a = new int[n + 1];
+
+        for(int i = 2; i*i <= n;++i) {
+            if(a[i] != 0) continue;
+
+            for(int j = i * 2; j <= n; j += i) {
+                a[j] = 1;
+            }
+        }
+
+        int ans = 0;
+
+        for(int i = 2; i <= n; ++i)
+           if(a[i] == 0)
+              ++ans;
+
+        return ans;
+    }
+     */
     }
 }

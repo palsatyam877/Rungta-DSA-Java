@@ -4,7 +4,17 @@ import java.util.*;
 
 public class JavaColllections {
 
+    public static int f(int n) {
+        if(n == 0)
+            return 0;
+
+        return n + f(n - 1);
+    }
+
     public static void main(String[] args) {
+
+        System.out.println(f(5));
+
         // ArrayList
 
         /*
@@ -108,6 +118,78 @@ public class JavaColllections {
         // System.out.println(w.get(3).get(2).get(3).get(4)); --> 81
 
         // https://leetcode.com/problems/sort-an-array/description/
+
+
+  /*
+class Solution {
+    public void MS(int s , int e , int[] arr) {
+        if(e - s <= 1) {
+             if(e - s == 1) {
+                if(arr[s] > arr[e]) {
+                    int temp = arr[s];
+                    arr[s] = arr[e];
+                    arr[e] = temp;
+                }
+             }
+
+             return;
+        }
+
+        int mid = (s + e) / 2;
+
+        MS(s , mid , arr); MS(mid + 1 , e , arr);
+
+        // System.out.println(s + " " + e);
+        // for(int i = s; i <= mid; ++i)
+        //    System.out.print(arr[i] + " ");
+        // System.out.println("");
+
+        // for(int i = mid + 1; i <= e; ++i)
+        //    System.out.print(arr[i] + " ");
+        // System.out.println("-------------------");
+
+        int [] temp = new int[e - s + 2];
+        int ix = 0; // temp ->
+        int lx = s; int rx = mid + 1;
+
+        while((lx <= mid) && (rx <= e)) {
+            if(arr[lx] <= arr[rx]) {
+                temp[ix] = arr[lx];
+                ++ix;
+                ++lx;
+            } else {
+                temp[ix] = arr[rx];
+                ++ix;
+                ++rx;
+            }
+        }
+
+        while(lx <= mid) {
+            temp[ix] = arr[lx];
+            ++ix;
+            ++lx;
+        }
+
+        while(rx <= e) {
+            temp[ix] = arr[rx];
+            ++ix;
+            ++rx;
+        }
+
+        ix = 0;
+
+        for(int i = s; i <= e; ++i)
+           arr[i] = temp[ix++];
+    }
+
+    public int[] sortArray(int[] nums) {
+        MS(0 , nums.length - 1 , nums);
+        return nums;
+    }
+}
+
+
+  */
     }
 
 }

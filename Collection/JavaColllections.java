@@ -192,6 +192,40 @@ class Solution {
   */
 
     // https://www.geeksforgeeks.org/problems/quick-sort/1
+
+    /*
+class Solution {
+    public void quickSort(int[] arr, int low, int high) {
+        //
+
+        if(low >= high)
+             return ;
+
+        int [] temp = new int [high - low + 1];
+        int ix = 0;
+
+        for(int i = low; i < high; ++i)
+            if(arr[i] <= arr[high])
+                temp[ix++] = arr[i];
+
+        int pivot = low + ix;
+        temp[ix++] = arr[high];
+
+        for(int i = low; i < high; ++i)
+           if(arr[i] > arr[high])
+              temp[ix++] = arr[i];
+
+        ix = 0;
+
+        for(int i = low; i <= high; ++i)
+            arr[i] = temp[ix++];
+
+        quickSort(arr , low , pivot - 1);
+        quickSort(arr , pivot + 1 , high);
+
+    }
+}
+     */
     }
 
 }

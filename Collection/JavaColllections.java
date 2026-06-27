@@ -443,15 +443,47 @@ class Solution {
         // Iterator --> Number Theory
 
         // Iterator --> Recursion
-        TreeSet<Pair> x = new TreeSet<>();
-        x.add(new Pair(1 , 4));
-        x.add(new Pair(2 , 2));
-        x.add(new Pair(4 , 5));
-
-        for(Pair y : x) {
-            System.out.println(y);
-        }
 
         // https://leetcode.com/problems/roman-to-integer/description/?topicSlugs=array
+
+        /*
+class Solution {
+
+
+    public int romanToInt(String s) {
+
+      HashMap<Character, Integer> h1 = new HashMap<>();
+      h1.put('I' , 1);
+      h1.put('V' , 5);
+      h1.put('X' , 10);
+      h1.put('L' , 50);
+      h1.put('C' , 100);
+      h1.put('D' , 500);
+      h1.put('M' , 1000);
+
+      int ans = 0 , i = 0;
+      for(; i < s.length() - 1; ++i)
+          if((s.charAt(i) == 'I') && (s.charAt(i + 1) == 'V' || s.charAt(i + 1) == 'X')) {
+               ans += h1.get(s.charAt(i + 1)) - h1.get(s.charAt(i));
+               ++i;
+          } else if((s.charAt(i) == 'X') && ((s.charAt(i + 1) == 'L') || (s.charAt(i + 1) == 'C'))) {
+               ans += h1.get(s.charAt(i + 1)) - h1.get(s.charAt(i));
+               ++i;
+          } else if((s.charAt(i) == 'C') && ((s.charAt(i + 1) == 'D') || (s.charAt(i + 1) == 'M') )) {
+               ans += h1.get(s.charAt(i + 1)) - h1.get(s.charAt(i));
+               ++i;
+          } else {
+               ans += h1.get(s.charAt(i));
+          }
+
+          if(i != s.length()) {
+              ans += h1.get(s.charAt(i));
+          }
+
+          return ans;
+    }
+}
+
+        */
     }
 }

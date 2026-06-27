@@ -392,6 +392,27 @@ class Solution {
 
         // https://www.geeksforgeeks.org/problems/intersection-of-two-arrays2404/1
 
+
+/*
+class Solution {
+    public ArrayList<Integer> uniqueSorted(int arr[]) {
+        // code here
+
+        TreeSet<Integer> ts = new TreeSet<>();
+
+        for(int i = 0; i < arr.length; ++i)
+             ts.add(arr[i]);
+
+        ArrayList<Integer> ans = new ArrayList<>();
+
+        for(Integer x : ts)
+              ans.add(x);
+        return ans;
+    }
+}
+
+*/
+
 /*
 class Solution {
     public static int intersectSize(int a[], int b[]) {

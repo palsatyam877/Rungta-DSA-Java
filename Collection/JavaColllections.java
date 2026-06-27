@@ -1,6 +1,14 @@
 package Collection;
 import java.util.*;
 
+class Pair {
+ public Integer first = 0;
+ public Integer second = 0;
+Pair(Integer first , Integer second) {
+    this.first = first;
+    this.second = second;
+} }
+
 public class JavaColllections {
 
     public static int f(int n) {
@@ -112,7 +120,58 @@ public class JavaColllections {
           System.out.println(a4.get(1).get(6).get(9).get(3));
         System.out.println(a4.get(3).get(2).get(3).get(4));
 
+        ArrayList<ArrayList<String>> arr = new ArrayList<>();
 
+        ArrayList<String> aa1 = new ArrayList<>(List.of("Hello" , "Java"));
+        ArrayList<String> ee1 = new ArrayList<>();
+
+        arr.add(ee1);
+        arr.add(aa1);
+
+        // Iterators
+
+        Iterator<ArrayList<String>> i1 = arr.iterator();
+        ArrayList<String> t1 = new ArrayList<>();
+
+        for(int i = 0; i < 2; ++i)
+            t1 = i1.next(); // t1 -> ArrayList<String>
+
+        Iterator<String> i2 = t1.iterator();
+        String t2 = "";
+
+        for(int i = 0; i < 2; ++i)
+              t2 = i2.next();
+
+        System.out.println(t2);
+
+        // System.out.println(a4.get(3).get(2).get(7).get(5)); // 7
+        // a4 -> ArrayList<ArrayList<ArrayList<ArrayLisr<Integer>>>> a4
+
+        Iterator<ArrayList<ArrayList<ArrayList<Integer>>>> ii1 = a4.iterator();
+        ArrayList<ArrayList<ArrayList<Integer>>> tt1 = new ArrayList<>();
+
+        for(int i = 0; i < 4; ++i)
+               tt1 = ii1.next();
+
+        Iterator<ArrayList<ArrayList<Integer>>> ii2 = tt1.iterator();
+        ArrayList<ArrayList<Integer>> tt2 = new ArrayList<>();
+
+        for(int i = 0; i < 3; ++i)
+              tt2 = ii2.next();
+
+        Iterator<ArrayList<Integer>> ii3 = tt2.iterator();
+        ArrayList<Integer> tt4 = new ArrayList<>();
+
+        for(int i = 0; i < 8; ++i)
+            tt4 = ii3.next();
+
+        Iterator<Integer> ii4 = tt4.iterator();
+        Integer tt5 = 0;
+
+        for(int i = 0; i < 6; ++i)
+            tt5 = ii4.next();
+
+        System.out.println(tt5 + " : solution");
 
 
         //  System.out.println(w.get(1).get(6).get(9).get(3)); --> 12
@@ -228,13 +287,14 @@ class Solution {
 }
      */
 
-        ArrayList<String> arr = new ArrayList<>(List.of( "Hello" , "World" , "Java" ));
+//        ArrayList<String> arr = new ArrayList<>(List.of( "Hello" , "World" , "Java" ));
 //        System.out.println(arr.get(2));
 
 //        Iterator<String> it = arr.iterator();
 //
 //        while(it.hasNext())
 //            System.out.println(it.next());
+
 
 
 
@@ -246,7 +306,66 @@ class Solution {
             TreeHashSet<>
         */
 
+        TreeSet<String> hs1 = new TreeSet<>();
+        hs1.add("Sumeet");
+        hs1.add("Rajat");
+        hs1.add("Saumya");
+        hs1.add("Shweta");
+
+        System.out.println(hs1);
+
+        hs1.remove("Sumeet");
+
+        System.out.println(hs1);
+
+        System.out.println(hs1.contains("Satyam"));
+        System.out.println(hs1.contains("Rajat"));
+
+        System.out.println(hs1.isEmpty());
+        System.out.println(hs1.size());
+//        hs1.clear();
+//        System.out.println(hs1);
+        // HashSet<String> hs1 = new HashSet<>();
+        Iterator<String> ih1 = hs1.iterator();
+
+        while(ih1.hasNext())
+            System.out.println(ih1.next());
+
+
+
         // https://www.geeksforgeeks.org/problems/minimum-vertical-sum-1593518814/1
+
+/*
+
+class Solution {
+    public int minimum_vertical_sum(ArrayList<ArrayList<Integer>> arr, int n) {
+        // code here
+        int N = arr.size();
+
+        int mxCol = 0;
+
+        for(int i = 0; i < N; ++i)
+            mxCol = Math.max(mxCol , arr.get(i).size());
+
+        int [] ans = new int [mxCol + 1];
+
+        for(int inx = 0; inx < mxCol; ++inx) {
+            for(int i = 0; i < N; ++i) {
+               if(arr.get(i).size()  >= inx + 1)
+                ans[inx] += arr.get(i).get(inx);
+            }
+        }
+
+        int Ans = 1000000000;
+
+        for(int i = 0; i < mxCol; ++i)
+            Ans = Math.min(Ans , ans[i]);
+
+        return Ans;
+    }
+}
+ */
+
         // https://www.geeksforgeeks.org/problems/union-of-two-arrays3538/1
         // https://www.geeksforgeeks.org/problems/intersection-of-two-arrays2404/1
         // https://www.geeksforgeeks.org/problems/distinct-sorted--124713/1
@@ -257,5 +376,13 @@ class Solution {
         // Iterator --> Number Theory
 
         // Iterator --> Recursion
+        TreeSet<Pair> x = new TreeSet<>();
+        x.add(new Pair(1 , 4));
+        x.add(new Pair(2 , 2));
+        x.add(new Pair(4 , 5));
+
+        for(Pair y : x) {
+            System.out.println(y);
+        }
     }
 }

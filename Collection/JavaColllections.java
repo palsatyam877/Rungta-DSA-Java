@@ -391,6 +391,29 @@ class Solution {
 */
 
         // https://www.geeksforgeeks.org/problems/intersection-of-two-arrays2404/1
+
+/*
+class Solution {
+    public static int intersectSize(int a[], int b[]) {
+        // Your code here
+
+        HashSet<Integer> hs = new HashSet<>();
+
+        for(int i = 0; i < a.length; ++i)
+           hs.add(a[i]);
+
+        ArrayList<Integer> ans = new ArrayList<>();
+
+        for(int i = 0; i < b.length; ++i)
+           if(hs.contains(b[i]))
+               ans.add(b[i]);
+
+        return ans.size();
+    }
+}
+
+*/
+
         // https://www.geeksforgeeks.org/problems/distinct-sorted--124713/1
 
         // System.out.println(lhs5.get(3).getLast().getFirst().get(2).getFirst()); // Number Theory

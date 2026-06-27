@@ -367,6 +367,29 @@ class Solution {
  */
 
         // https://www.geeksforgeeks.org/problems/union-of-two-arrays3538/1
+/*
+class Solution {
+    public static ArrayList<Integer> findUnion(int[] a, int[] b) {
+        // code here
+        HashSet<Integer> hs = new HashSet<>();
+
+        for(int i = 0; i < a.length; ++i)
+            hs.add(a[i]);
+
+        for(int i = 0; i < b.length; ++i)
+            hs.add(b[i]);
+
+        ArrayList<Integer> ans = new ArrayList<>();
+
+        for(Integer x : hs)
+             ans.add(x);
+
+        return ans;
+
+    }
+}
+*/
+
         // https://www.geeksforgeeks.org/problems/intersection-of-two-arrays2404/1
         // https://www.geeksforgeeks.org/problems/distinct-sorted--124713/1
 

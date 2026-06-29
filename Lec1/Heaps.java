@@ -3,6 +3,7 @@ package Lec1;
 import com.sun.source.tree.Tree;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentMap;
 
 public class Heaps {
     // Sets
@@ -14,7 +15,7 @@ public class Heaps {
     // https://leetcode.com/problems/k-closest-points-to-origin/
     // https://leetcode.com/problems/meeting-rooms-iii/submissions/2049400865/
 
-    public static class MyInt {
+    public static class MyInt implements Comparable<MyInt> {
         Integer Int;
 
         MyInt(int Int) {
@@ -26,15 +27,15 @@ public class Heaps {
             return this.Int + " ";
         }
 
-//        @Override
-//        public int compareTo(MyInt that) {
-//           // this.Int  that.Int
-//
-//            if(that.Int.compareTo(this.Int) == 0)
-//                   return 1;
-//
-//           return (that.Int.compareTo(this.Int));
-//        }
+        @Override
+        public int compareTo(MyInt that) {
+           // this.Int  that.Int
+
+            if(that.Int.compareTo(this.Int) == 0)
+                   return 1;
+
+           return (this.Int.compareTo(that.Int));
+        }
 
     }
 
@@ -61,6 +62,17 @@ public class Heaps {
 
     }
 
+    public static class MyCustomMap implements Comparator<Integer> {
+
+        @Override
+        public int compare(Integer a , Integer b) {
+            if(b.compareTo(a) == 0)
+                  return 1;
+
+            return b.compareTo(a);
+        }
+    }
+
     public static void main(String []args) {
 //        System.out.println("Hello heaps");
         HashSet<String> hs = new LinkedHashSet<>();
@@ -85,7 +97,7 @@ public class Heaps {
 
 //        System.out.println(arr);
 
-        Collections.sort(arr , new MyCustom());
+         Collections.sort(arr , new MyCustom());
 
 //        System.out.println(arr);
 
@@ -98,17 +110,27 @@ public class Heaps {
 //
 //        System.out.println(ts);
 
-          TreeSet<MyInt> ts1 = new TreeSet<>(new MyCustomInt());
+//          TreeSet<MyInt> ts1 = new TreeSet<>();
+//
+//          ts1.add(new MyInt(4));
+//          ts1.add(new MyInt(14));
+//          ts1.add(new MyInt(41));
+//          ts1.add(new MyInt(-4));
+//          ts1.add(new MyInt(42));
+//          ts1.add(new MyInt(-4));
+//          ts1.add(new MyInt(14));
+//
+//          System.out.println(ts1);
 
-          ts1.add(new MyInt(4));
-          ts1.add(new MyInt(14));
-          ts1.add(new MyInt(41));
-          ts1.add(new MyInt(-4));
-          ts1.add(new MyInt(42));
-          ts1.add(new MyInt(-4));
-          ts1.add(new MyInt(14));
+            TreeMap<Integer, Integer> mp = new TreeMap<>(new MyCustomMap());
 
-          System.out.println(ts1);
+            mp.put(1 , 10);
+            mp.put(-6 , 12);
+            mp.put(-2 , 7);
+            mp.put(10 , 20);
+            mp.put(-6 , 12);
+
+           System.out.println(mp);
+
     }
-
 }

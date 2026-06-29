@@ -180,21 +180,7 @@ public class Coillection {
 
         // https://www.geeksforgeeks.org/problems/gcd-of-two-numbers3459/1
 
-        Animal a1 = new Animal("Leo" , 1 , 3.5);
-        Animal a2 = new Animal("Max" , 1 , 8.5);
-        Animal a3 = new Animal("Antonio" , 1 , 4.5);
-        Animal a4 = new Animal("Barney" , 1 , 1.5);
-
-        ArrayList<Animal> L = new ArrayList<>(List.of(a1 , a2 , a3 , a4));
 
 //        System.out.println(a1);
-
-        Collections.sort(L, (o1 ,  o2) -> {
-            return o2.name.compareTo(o1.name);
-        } );
-
-        Set<Integer> st = new TreeSet<>();
-
-        System.out.println(L);
     }
 }

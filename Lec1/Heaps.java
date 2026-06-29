@@ -56,6 +56,84 @@ public class Heaps {
 
 
     // https://leetcode.com/problems/top-k-frequent-elements/description/
+
+/*
+class Solution {
+    public static class Pair implements Comparable<Pair> {
+        Integer a , b;
+
+        Pair(Integer a , Integer b) {
+            this.a = a;
+            this.b = b;
+        }
+
+        @Override
+        public int compareTo(Pair that) {
+           if(this.a.compareTo(that.a) == 0)
+                 return this.b.compareTo(that.b);
+
+           return  this.a.compareTo(that.a);
+        }
+
+        @Override
+        public String toString() {
+            return this.a + " " + this.b + " \n";
+        }
+    }
+
+    public int[] topKFrequent(int[] nums, int k) {
+        HashMap<Integer,Integer> hs = new HashMap<>();
+
+        for(int i = 0; i < nums.length; ++i)
+           if(hs.containsKey(nums[i])) {
+               hs.put(nums[i] , hs.get(nums[i]) + 1);
+           } else {
+               hs.put(nums[i] , 1);
+           }
+
+        System.out.println(hs);
+
+        Set<Pair> ts = new TreeSet<>();
+
+        for(Map.Entry<Integer , Integer> x : hs.entrySet()) {
+            Integer key = x.getKey();
+            Integer val = x.getValue();
+
+            if(ts.size() < k)
+                ts.add(new Pair(val , key));
+            else {
+                Iterator<Pair> it = ts.iterator();
+                // System.out.println(it.next());
+                Pair fr = it.next();
+
+            //   System.out.println(fr);
+            //   System.out.println(fr.first);
+                if(val.compareTo(fr.a) > 0) {
+                    it.remove();
+                    ts.add(new Pair(val , key));
+                }
+            }
+
+             System.out.println(ts);
+        }
+
+        int [] ans = new int[k];
+        int i = 0;
+
+        for(Pair x : ts) {
+            ans[i++] = x.b;
+        }
+
+        return ans;
+    }
+}
+
+
+
+
+*/
+
+
     // https://leetcode.com/problems/k-closest-points-to-origin/
     // https://leetcode.com/problems/meeting-rooms-iii/submissions/2049400865/
 
@@ -63,7 +141,7 @@ public class Heaps {
         Integer Int;
 
         MyInt(int Int) {
-            this.Int  = Int;
+            this.Int = Int;
         }
 
         @Override
@@ -73,23 +151,23 @@ public class Heaps {
 
         @Override
         public int compareTo(MyInt that) {
-           // this.Int  that.Int
+            // this.Int  that.Int
 
-            if(that.Int.compareTo(this.Int) == 0)
-                   return 1;
+            if (that.Int.compareTo(this.Int) == 0)
+                return 1;
 
-           return (this.Int.compareTo(that.Int));
+            return (this.Int.compareTo(that.Int));
         }
 
     }
 
-    public  static class MyCustom implements  Comparator<Integer> {
+    public static class MyCustom implements Comparator<Integer> {
 
         @Override
-        public int compare(Integer a , Integer b) {
+        public int compare(Integer a, Integer b) {
 //            System.out.println(a.compareTo(b) + " " + a + " compare to " + b);
-            if(a.compareTo(b) == 0)
-                  return  0;
+            if (a.compareTo(b) == 0)
+                return 0;
             return a.compareTo(b);
         }
     }
@@ -97,9 +175,9 @@ public class Heaps {
     public static class MyCustomInt implements Comparator<MyInt> {
 
         @Override
-        public int compare(MyInt a , MyInt b) {
-            if(a.Int.compareTo(b.Int) == 0)
-                  return 1;
+        public int compare(MyInt a, MyInt b) {
+            if (a.Int.compareTo(b.Int) == 0)
+                return 1;
 
             return a.Int.compareTo(b.Int);
         }
@@ -109,36 +187,36 @@ public class Heaps {
     public static class MyCustomMap implements Comparator<Integer> {
 
         @Override
-        public int compare(Integer a , Integer b) {
-            if(b.compareTo(a) == 0)
-                  return 1;
+        public int compare(Integer a, Integer b) {
+            if (b.compareTo(a) == 0)
+                return 1;
 
             return b.compareTo(a);
         }
     }
 
-    public  static class A {
-          Integer a;
+    public static class A {
+        Integer a;
 
-          public A(Integer a) {
-              this.a = a;
-          }
+        public A(Integer a) {
+            this.a = a;
+        }
 
 //          @Override
 //          public int compareTo(A that) {
 //              return that.a.compareTo(this.a);
 //          }
 
-          @Override
-          public String toString() {
-              return this.a + " ";
-          }
+        @Override
+        public String toString() {
+            return this.a + " ";
+        }
     }
 
     public static class MyCmp implements Comparator<A> {
 
         @Override
-        public int compare(A x , A y) {
+        public int compare(A x, A y) {
             return y.a.compareTo(x.a);
         }
     }
@@ -146,18 +224,18 @@ public class Heaps {
     public static class MySetCust implements Comparator<Integer> {
 
         @Override
-        public int compare(Integer a , Integer b) {
-             if(a.compareTo(b) == 0)
-                 return 1;
+        public int compare(Integer a, Integer b) {
+            if (a.compareTo(b) == 0)
+                return 1;
 
-             return a.compareTo(b);
+            return a.compareTo(b);
         }
     }
 
     public static class Cust {
-        Integer a , b;
+        Integer a, b;
 
-        Cust(Integer a , Integer b) {
+        Cust(Integer a, Integer b) {
             this.a = a;
             this.b = b;
         }
@@ -180,8 +258,8 @@ public class Heaps {
     public static class MyCust implements Comparator<Cust> {
 
         @Override
-        public int compare(Cust A , Cust B) {
-            if(A.a.compareTo(B.a) == 0) {
+        public int compare(Cust A, Cust B) {
+            if (A.a.compareTo(B.a) == 0) {
                 return B.b.compareTo(A.b);
             }
 
@@ -190,7 +268,29 @@ public class Heaps {
         }
     }
 
-    public static void main(String []args) {
+    public static class Pair implements Comparable<Pair> {
+        Integer a, b;
+
+        Pair(Integer a, Integer b) {
+            this.a = a;
+            this.b = b;
+        }
+
+        @Override
+        public int compareTo(Pair that) {
+            if (this.a.compareTo(that.a) == 0)
+                return this.b.compareTo(that.b);
+
+            return this.a.compareTo(that.a);
+        }
+
+        @Override
+        public String toString() {
+            return this.a + " " + this.b + " \n";
+        }
+    }
+
+    public static void main(String[] args) {
 //        System.out.println("Hello heaps");
         HashSet<String> hs = new LinkedHashSet<>();
         hs.add("Dog");
@@ -308,13 +408,24 @@ public class Heaps {
 //
 //        System.out.println(s1);
 
-        Set<Cust> s2 = new TreeSet<>(new MyCust());
-        s2.add(new Cust(1 , 3));
-        s2.add(new Cust(3 , 1));
-        s2.add(new Cust(1 , 2));
-        s2.add(new Cust(4 ,2));
+//        Set<Cust> s2 = new TreeSet<>(new MyCust());
+//        s2.add(new Cust(1 , 3));
+//        s2.add(new Cust(3 , 1));
+//        s2.add(new Cust(1 , 2));
+//        s2.add(new Cust(4 ,2));
 
-        System.out.println(s2);
+//        System.out.println(s2);
+
+        Set<Pair> s3 = new TreeSet<>();
+
+        s3.add(new Pair(5, 2));
+        s3.add(new Pair(2, 4));
+        s3.add(new Pair(2, 7));
+
+        Map x = new TreeMap<>();
+        x.values()
+
+        System.out.println(s3);
 
     }
 }

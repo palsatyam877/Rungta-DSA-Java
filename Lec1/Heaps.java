@@ -427,7 +427,7 @@ class Solution {
         s3.add(new Pair(2, 7));
 
         Map x = new TreeMap<>();
-        x.values()
+        x.values();
 
         System.out.println(s3);
 

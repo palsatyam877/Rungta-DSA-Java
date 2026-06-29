@@ -1,11 +1,20 @@
 package Collection;
+import java.util.*;
 
-import java.util.Scanner;
+class MyComparator implements Comparator<Animal> {
+
+    @Override
+    public int compare(Animal o1, Animal o2) {
+
+        return Double.compare(o1.proteinIntake , o2.proteinIntake);
+    }
+}
+
 
 public class Coillection {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+//        Scanner sc = new Scanner(System.in);
 
        /*
           /*
@@ -84,7 +93,7 @@ public class Coillection {
 
         // sqrt
 
-        long n = sc.nextLong();
+//        long n = sc.nextLong();
 
 //        for(long i = 1; i <= n; ++i)
 //            if(i*i == n) {
@@ -136,13 +145,13 @@ public class Coillection {
         System.out.println("No sqrt for " + n);
 
  */
-        for(long i = 2; i*i <= n; ++i)
-            if(n % i == 0) {
-                System.out.println(n + " is composite");
-                return;
-            }
-
-        System.out.println(n + " is a prime");
+//        for(long i = 2; i*i <= n; ++i)
+//            if(n % i == 0) {
+//                System.out.println(n + " is composite");
+//                return;
+//            }
+//
+//        System.out.println(n + " is a prime");
 
       // https://leetcode.com/problems/count-primes/description/
 
@@ -170,5 +179,22 @@ public class Coillection {
      */
 
         // https://www.geeksforgeeks.org/problems/gcd-of-two-numbers3459/1
+
+        Animal a1 = new Animal("Leo" , 1 , 3.5);
+        Animal a2 = new Animal("Max" , 1 , 8.5);
+        Animal a3 = new Animal("Antonio" , 1 , 4.5);
+        Animal a4 = new Animal("Barney" , 1 , 1.5);
+
+        ArrayList<Animal> L = new ArrayList<>(List.of(a1 , a2 , a3 , a4));
+
+//        System.out.println(a1);
+
+        Collections.sort(L, (o1 ,  o2) -> {
+            return o2.name.compareTo(o1.name);
+        } );
+
+        Set<Integer> st = new TreeSet<>();
+
+        System.out.println(L);
     }
 }

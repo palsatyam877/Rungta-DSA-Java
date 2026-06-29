@@ -1,14 +1,6 @@
 package Collection;
 import java.util.*;
 
-class Pair {
- public Integer first = 0;
- public Integer second = 0;
-Pair(Integer first , Integer second) {
-    this.first = first;
-    this.second = second;
-} }
-
 public class JavaColllections {
 
     public static int f(int n) {
@@ -485,5 +477,12 @@ class Solution {
 }
 
         */
+
+        Map<Integer,Integer> hs = new HashMap<>();
+//        hs.containsKey()
+
+        HashMap<Integer , Integer> h1 = new HashMap<>();
+        System.out.println(h1.get(5));
+        System.out.println(h1.get(5));
     }
 }

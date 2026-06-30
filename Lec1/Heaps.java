@@ -294,6 +294,36 @@ class Solution {
         }
     }
 
+    public static class CustomMap implements Comparator<String> {
+        @Override
+        public int compare(String a , String b) {
+            if(a.compareTo(b) == 0)
+                  return 1;
+            return a.compareTo(b);
+        }
+    }
+
+    public static class MInt implements Comparable<MInt> {
+        Integer Int; //
+
+        MInt(Integer Int) {
+           this.Int = Int;
+        }
+
+        @Override
+        public int compareTo(MInt that) {
+            if(this.Int.compareTo(that.Int) == 0)
+                return 1;
+
+            return this.Int.compareTo(that.Int);
+        }
+
+        @Override
+        public String toString() {
+            return this.Int + " ";
+        }
+    }
+
     public static void main(String[] args) {
 //        System.out.println("Hello heaps");
         HashSet<String> hs = new LinkedHashSet<>();
@@ -420,16 +450,36 @@ class Solution {
 
 //        System.out.println(s2);
 
-        Set<Pair> s3 = new TreeSet<>();
+//        Set<Pair> s3 = new TreeSet<>();
+//
+//        s3.add(new Pair(5, 2));
+//        s3.add(new Pair(2, 4));
+//        s3.add(new Pair(2, 7));
+//
+//        Map x = new TreeMap<>();
+//        x.values();
+//
+//        System.out.println(s3);
 
-        s3.add(new Pair(5, 2));
-        s3.add(new Pair(2, 4));
-        s3.add(new Pair(2, 7));
+        Map<String , Integer> mp2 = new TreeMap<>(new CustomMap());
 
-        Map x = new TreeMap<>();
-        x.values();
+        mp2.put("hello" , 10);
+        mp2.put("Java" , -1);
+        mp2.put("DSA" , 10);
+        mp2.put("Bhilai" , 18);
 
-        System.out.println(s3);
+        mp2.put("Java" , -20);
 
+//        System.out.println(mp2);
+
+        Map<MInt , Integer> mp3 = new TreeMap<>();
+        mp3.put(new MInt(12) , 18);
+        mp3.put(new MInt(-1) , 18);
+        mp3.put(new MInt(21) , 7);
+        mp3.put(new MInt(8) , 14);
+        mp3.put(new MInt(9) , 14);
+        mp3.put(new MInt(9) , -13);
+
+        System.out.println(mp3);
     }
 }

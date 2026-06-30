@@ -1,4 +1,5 @@
 package Lec2;
+import java.util.*;
 
 public class HeapsLeetCode {
     // Making Map store Duplicate keys
@@ -71,6 +72,94 @@ class Solution {
 
     // https://leetcode.com/problems/find-median-from-data-stream/
 
+    /*
+class MedianFinder {
+    public class Pair implements Comparable<Pair> {
+       Integer first , second;
+
+       Pair(Integer first , Integer second) {
+           this.first = first;
+           this.second = second;
+       }
+
+       @Override
+       public String toString() {
+           return this.first + " = " + this.second + " , ";
+       }
+
+       @Override
+       public int compareTo(Pair that) {
+           if(this.first.compareTo(that.first) == 0)
+               return this.second.compareTo(that.second);
+
+           return this.first.compareTo(that.first);
+       }
+    }
+
+    HashMap<Integer,Integer> hm;
+    TreeSet<Pair> ts;
+    Pair curr;
+
+    public MedianFinder() {
+        hm = new HashMap<>();
+        ts = new TreeSet<>();
+    }
+
+    public void addNum(int num) {
+        if(ts.size() == 0) {
+            hm.put(num , 1);
+            ts.add(new Pair(num , 1));
+            curr = new Pair(num , 1);
+            return;
+        }
+
+        if(ts.size() % 2 == 0) {
+            if(hm.containsKey(num))
+                hm.put(num , hm.get(num) + 1);
+            else
+                hm.put(num , 1);
+
+            ts.add(new Pair(num , hm.get(num)));
+
+            Integer num1 = new Integer(num);
+
+            if(num1.compareTo(curr.first) >= 0) {
+                Iterator<Pair> it = ts.tailSet(new Pair(curr.first , curr.second) , true).iterator();
+                it.next();
+                curr = it.next();
+            }
+        } else {
+            if(hm.containsKey(num))
+                hm.put(num , hm.get(num) + 1);
+            else
+                hm.put(num , 1);
+
+            ts.add(new Pair(num , hm.get(num)));
+
+            Integer num1 = new Integer(num);
+
+           if(num1.compareTo(curr.first) < 0) {
+                Iterator<Pair> it = ts.headSet(new Pair(curr.first , curr.second) , true).descendingIterator();
+                it.next();
+                curr = it.next();
+            }
+        }
+    }
+
+    public double findMedian() {
+        if(ts.size() % 2 == 0) {
+            Iterator<Pair> it = ts.tailSet(new Pair(curr.first , curr.second) , true).iterator();
+            it.next();
+            Pair curr1 = it.next();
+
+            return (curr.first + curr1.first) / 2.0;
+        } else {
+            return (double)curr.first;
+        }
+    }
+}
+    */
+
     // https://leetcode.com/problems/meeting-rooms-iii/
 
     // Ascending and Descinding iterator from a given point in Set ***** IMP
@@ -78,5 +167,27 @@ class Solution {
 
     public static void main(String [] args) {
         System.out.println("Hello Map");
+
+        TreeSet<Integer> s = new TreeSet<>();
+        s.add(13);
+        s.add(8);
+        s.add(14);
+        s.add(4);
+        s.add(2);
+        s.add(7);
+        s.add(9);
+
+        System.out.println(s);
+
+        Iterator<Integer> it = s.tailSet( 9 , true ).iterator();
+
+//        while(it.hasNext())
+//            System.out.println(it.next());
+
+        Iterator<Integer> it1 = s.headSet(8 , true).descendingIterator();
+
+        while(it1.hasNext())
+            System.out.println(it1.next());
+
     }
 }

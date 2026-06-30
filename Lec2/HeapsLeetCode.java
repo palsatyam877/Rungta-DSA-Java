@@ -1,4 +1,5 @@
 package Lec2;
+import javax.smartcardio.CardChannel;
 import java.util.*;
 
 public class HeapsLeetCode {
@@ -162,6 +163,38 @@ class MedianFinder {
 
     // https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
+    /*
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+       if(s.length() == 0)
+            return 0;
+
+       int l = 0 , r = 0;
+       HashSet<Character> hs = new HashSet<>();
+       hs.add(s.charAt(0));
+       int ans = 1;
+
+       for(int i = 1; i < s.length(); ++i) {
+           if(hs.contains(s.charAt(i))) {
+               while(l < i) {
+                   Character temp = s.charAt(l);
+                   hs.remove(s.charAt(l));
+                   ++l;
+                   if(temp.equals(s.charAt(i))) {
+                       break;
+                   }
+               }
+           }
+
+           hs.add(s.charAt(i));
+           ans = Math.max(ans , hs.size());
+       }
+
+       return ans;
+    }
+}
+    */
+
     // https://leetcode.com/problems/meeting-rooms-iii/
 
     // Ascending and Descinding iterator from a given point in Set ***** IMP
@@ -179,6 +212,8 @@ class MedianFinder {
         s.add(7);
         s.add(9);
 
+
+
         System.out.println(s);
 
         Iterator<Integer> it = s.tailSet( 9 , true ).iterator();
@@ -190,6 +225,12 @@ class MedianFinder {
 
         while(it1.hasNext())
             System.out.println(it1.next());
+
+        Character x = 'A';
+        Character y = 'A';
+        String x7 = "Ahhd";
+        System.out.println();
+        System.out.println(x.equals(y));
 
     }
 }

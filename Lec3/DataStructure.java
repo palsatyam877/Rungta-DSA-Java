@@ -52,6 +52,35 @@ class Solution {
 */
 
 // https://leetcode.com/problems/happy-number/
+
+/*
+class Solution {
+    public boolean isHappy(int n) {
+        HashSet<Integer> hs = new HashSet<>();
+
+        while(n > 1) {
+            int temp = 0;
+
+            while(n > 0) {
+                int last = n % 10;
+                n /= 10;
+
+                temp += (last * last);
+            }
+
+            if(hs.contains(temp))
+                 return false;
+
+            hs.add(temp);
+
+            n = temp;
+        }
+
+        return true;
+    }
+}
+*/
+
 // https://leetcode.com/problems/contains-duplicate-ii/
 // https://leetcode.com/problems/merge-similar-items/
 // https://leetcode.com/problems/find-right-interval/

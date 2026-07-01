@@ -2,6 +2,29 @@ package Lec3;
 import java.util.*;
 
 // https://leetcode.com/problems/two-sum/
+
+/*
+class Solution {
+    public int[] twoSum(int[] nums, int t) {
+        HashMap<Integer , Integer> mp = new HashMap<>();
+        int n = nums.length;
+
+        for(int i = 0; i < n; ++i)
+            if(mp.containsKey(t - nums[i])) {
+                int [] ans = new int[2];
+                ans[0] = mp.get(t - nums[i]);
+                ans[1] = i;
+                return ans;
+            } else {
+                mp.put(nums[i] , i);
+            }
+
+        return (new int[2]);
+    }
+}
+
+*/
+
 // https://leetcode.com/problems/minimum-pair-removal-to-sort-array-i/
 
 /*

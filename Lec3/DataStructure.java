@@ -133,8 +133,6 @@ class Solution {
 }
 */
 
-// https://leetcode.com/problems/merge-similar-items/
-// https://leetcode.com/problems/find-right-interval/
 // https://leetcode.com/problems/meeting-rooms-iii/
 
 /*

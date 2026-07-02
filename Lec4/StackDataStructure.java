@@ -109,8 +109,139 @@ class Solution {
 */
 
 // https://www.geeksforgeeks.org/problems/immediate-smaller-element1142/1
+
+/*
+class Solution {
+    static ArrayList<Integer> nextSmallerEle(int[] arr) {
+        // code here
+        // code here
+        ArrayList<Integer> Ans = new ArrayList<>();
+        int n = arr.length;
+
+        Stack<Integer> stk = new Stack<>();
+        int [] ans = new int[n];
+
+        for(int i = 0; i < n; ++i)
+            ans[i] = -1;
+
+
+        for(int i = 0; i < n; ++i) {
+           while(stk.size() > 0) {
+               int top = stk.peek();
+
+               if(arr[top] > arr[i]) {
+                   ans[top] = i;
+                   stk.pop();
+               } else {
+                   break;
+               }
+           }
+
+           stk.push( i );
+        }
+
+        for(int i = 0; i < n; ++i) {
+           if(ans[i] != -1)
+               Ans.add(arr[ans[i]]);
+            else
+               Ans.add(-1);
+        }
+
+        return Ans;
+    }
+}
+
+ */
+
 // https://www.geeksforgeeks.org/problems/previous-greater-element/1
+
+/*
+class Solution {
+    public ArrayList<Integer> preGreaterEle(int[] arr) {
+        // code here
+        ArrayList<Integer> Ans = new ArrayList<>();
+        int n = arr.length;
+
+        Stack<Integer> stk = new Stack<>();
+        int [] ans = new int[n];
+
+        for(int i = 0; i < n; ++i)
+            ans[i] = -1;
+
+
+        for(int i = n - 1; i >= 0; --i) {
+           while(stk.size() > 0) {
+               int top = stk.peek();
+
+               if(arr[top] < arr[i]) {
+                   ans[top] = i;
+                   stk.pop();
+               } else {
+                   break;
+               }
+           }
+
+           stk.push( i );
+        }
+
+        for(int i = 0; i < n; ++i) {
+           if(ans[i] != -1)
+               Ans.add(arr[ans[i]]);
+            else
+               Ans.add(-1);
+        }
+
+        return Ans;
+    }
+}
+
+ */
+
 // https://www.geeksforgeeks.org/problems/previous-smaller-element/1
+
+/*
+class Solution {
+    public static ArrayList<Integer> prevSmaller(int[] arr) {
+        // code here
+         ArrayList<Integer> Ans = new ArrayList<>();
+        int n = arr.length;
+
+        Stack<Integer> stk = new Stack<>();
+        int [] ans = new int[n];
+
+        for(int i = 0; i < n; ++i)
+            ans[i] = -1;
+
+
+        for(int i = n - 1; i >= 0; --i) {
+           while(stk.size() > 0) {
+               int top = stk.peek();
+
+               if(arr[top] > arr[i]) {
+                   ans[top] = i;
+                   stk.pop();
+               } else {
+                   break;
+               }
+           }
+
+           stk.push( i );
+        }
+
+        for(int i = 0; i < n; ++i) {
+           if(ans[i] != -1)
+               Ans.add(arr[ans[i]]);
+            else
+               Ans.add(-1);
+        }
+
+        return Ans;
+    }
+}
+
+*/
+
+
 // https://leetcode.com/problems/valid-parentheses/
 // https://leetcode.com/problems/longest-valid-parentheses/
 

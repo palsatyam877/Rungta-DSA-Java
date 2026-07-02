@@ -12,6 +12,34 @@ import java.util.*;
 /*
 class Solution {
     public int[] findRightInterval(int[][] intv) {
+        int [] ans = new int[intv.length];
+
+        for(int i = 0; i < intv.length; ++i) {
+            int start = intv[i][0] , end = intv[i][1];
+            int mn = 1000001;
+            ans[i] = -1;
+
+            for(int j = 0; j < intv.length; ++j) {
+                int start1 = intv[j][0] , end1 = intv[j][1];
+
+                if(end <= start1) {
+                    if(start1 < mn) {
+                        mn = start1;
+                        ans[i] = j;
+                    }
+                }
+            }
+        }
+
+        return ans;
+    }
+}
+
+*/
+
+/*
+class Solution {
+    public int[] findRightInterval(int[][] intv) {
         int n = intv.length;
 
         int [] ans = new int[n];
@@ -48,44 +76,43 @@ class Solution {
 public class StackDataStructure {
     public static void main(String [] args) {
 
-       Stack<Integer> stk = new Stack<>();
-       stk.add(5);
-       stk.add(2);
-       stk.add(1);
+//       Stack<Integer> stk = new Stack<>();
+//       stk.add(5);
+//       stk.add(2);
+//       stk.add(1);
 
 //       System.out.println(stk);
 //       System.out.println(stk.peek());
-       stk.pop();
+//       stk.pop();
 //       System.out.println(stk);
 
-       ArrayList<Integer> arrL = new ArrayList<>();
-       arrL.add(59);
-       arrL.add(65);
-       arrL.add(52);
-       arrL.add(51);
-       arrL.add(25);
-
-       arrL.set(2 , 4);
+//       ArrayList<Integer> arrL = new ArrayList<>();
+//       arrL.add(59);
+//       arrL.add(65);
+//       arrL.add(52);
+//       arrL.add(51);
+//       arrL.add(25);
+//
+//       arrL.set(2 , 4);
 //        System.out.println(arrL);
 
-       TreeSet<Integer> ts = new TreeSet<>();
-       ts.add(-1 * 4);
-       ts.add(-1 * 10);
-       ts.add(-1 * 15);
-       ts.add(-1 * 16);
-       ts.add(-1 * 17);
-       ts.add(-1 * 21);
-       ts.add(-1 * 25);
+//       TreeSet<Integer> ts = new TreeSet<>();
+//       ts.add(-1 * 4);
+//       ts.add(-1 * 10);
+//       ts.add(-1 * 15);
+//       ts.add(-1 * 16);
+//       ts.add(-1 * 17);
+//       ts.add(-1 * 21);
+//       ts.add(-1 * 25);
 
 //       System.out.println(-ts.ceiling(-20));
-
-       TreeMap<Integer , Integer> mp = new TreeMap<>();
-       mp.put(3 , 10);
-       mp.put(5 , 15);
-       mp.put(10 , 19);
-
-       System.out.println(mp.ceilingKey(5));
-
+//
+//       TreeMap<Integer , Integer> mp = new TreeMap<>();
+//       mp.put(3 , 10);
+//       mp.put(5 , 15);
+//       mp.put(10 , 19);
+//
+//       System.out.println(mp.ceilingKey(5));
 
     }
 }

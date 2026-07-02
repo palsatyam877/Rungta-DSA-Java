@@ -1,5 +1,10 @@
 package Lec4;
+import Lec1.Heaps;
+
 import java.util.*;
+
+// .ceiling() --> TreeSet , .ceilingKey() --> TreeMap
+// just smaller element using above ?
 
 // https://leetcode.com/problems/merge-similar-items/
 // https://leetcode.com/problems/find-right-interval/
@@ -32,5 +37,7 @@ public class StackDataStructure {
 
        arrL.set(2 , 4);
         System.out.println(arrL);
+
+      TreeMap<Integer , Integer> mp = new TreeMap<>();
     }
 }

@@ -67,6 +67,47 @@ class Solution {
 */
 
 // https://www.geeksforgeeks.org/problems/next-larger-element-1587115620/1
+/*
+class Solution {
+    public ArrayList<Integer> nextLargerElement(int[] arr) {
+        // code here
+        ArrayList<Integer> Ans = new ArrayList<>();
+        int n = arr.length;
+
+        Stack<Integer> stk = new Stack<>();
+        int [] ans = new int[n];
+
+        for(int i = 0; i < n; ++i)
+            ans[i] = -1;
+
+
+        for(int i = 0; i < n; ++i) {
+           while(stk.size() > 0) {
+               int top = stk.peek();
+
+               if(arr[top] < arr[i]) {
+                   ans[top] = i;
+                   stk.pop();
+               } else {
+                   break;
+               }
+           }
+
+           stk.push( i );
+        }
+
+        for(int i = 0; i < n; ++i) {
+           if(ans[i] != -1)
+               Ans.add(arr[ans[i]]);
+            else
+               Ans.add(-1);
+        }
+
+        return Ans;
+    }
+}
+*/
+
 // https://www.geeksforgeeks.org/problems/immediate-smaller-element1142/1
 // https://www.geeksforgeeks.org/problems/previous-greater-element/1
 // https://www.geeksforgeeks.org/problems/previous-smaller-element/1
@@ -114,5 +155,23 @@ public class StackDataStructure {
 //
 //       System.out.println(mp.ceilingKey(5));
 
+       Stack<Integer> stk = new Stack<>();
+       stk.push(4);
+       stk.push(14);
+       stk.push(8);
+       stk.push(24);
+       stk.push(-4);
+
+       System.out.println(stk);
+
+       System.out.println(stk.peek());
+       stk.pop();
+       System.out.println(stk.peek());
+
+       while (!stk.isEmpty()) {
+          stk.pop();
+       }
+
+       System.out.println(stk);
     }
 }

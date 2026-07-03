@@ -80,6 +80,87 @@ class Solution {
 
     // https://leetcode.com/problems/trapping-rain-water/
 
+    /*
+class Solution {
+    public int trap(int[] h) {
+        int n = h.length;
+        int [] nxtGrtEl = new int[n];
+        int [] prevGrtEl = new int[n];
+        Stack<Integer> stk = new Stack<>();
+
+        for(int i = 0; i < n; ++i) {
+            nxtGrtEl[i] = i;
+
+            while((stk.size() > 0) && (h[stk.peek()] < h[i])) {
+                nxtGrtEl[stk.pop()] = i;
+            }
+
+            stk.push(i);
+        }
+
+        stk.clear();
+
+        for(int i = n - 1; i >= 0; --i) {
+            prevGrtEl[i] = i;
+
+            while((stk.size() > 0) && (h[i] > h[stk.peek()])) {
+                prevGrtEl[stk.pop()] = i;
+            }
+
+            stk.push(i);
+        }
+
+        int leftTip = 0 , rightTip = n - 1 , ans = 0;
+
+        for(int i = 0; i < n; ++i) {
+            // System.out.println(i);
+
+            if(nxtGrtEl[i] != i) {
+
+                for(int j = i; j < nxtGrtEl[i]; ++j) {
+                    ans += (h[i] - h[j]);
+                }
+
+                i = nxtGrtEl[i] - 1;
+            } else {
+                leftTip = i;
+                break;
+            }
+        }
+
+        for(int i = n - 1; i >= 0; --i) {
+            if(prevGrtEl[i] != i) {
+                for(int j = i; j > prevGrtEl[i]; --j) {
+                    ans += (h[i] - h[j]);
+                }
+
+                i = prevGrtEl[i] + 1;
+            } else {
+                rightTip = i;
+                break;
+            }
+        }
+
+        // System.out.println(ans);
+
+        // for(int i = 0; i < n; ++i)
+        //     System.out.print(nxtGrtEl[i] + " ");
+        // System.out.println();
+
+
+        // for(int i = 0; i < n; ++i)
+        //     System.out.print(prevGrtEl[i] + " ");
+        // System.out.println();
+
+        for(int i = leftTip; i <= rightTip; ++i)
+            ans += h[leftTip] - h[i];
+
+        return ans;
+    }
+}
+
+    */
+
     /******************** Sliding Windows && Two Pointers *****************************/
 
     // https://leetcode.com/problems/product-of-array-except-self/

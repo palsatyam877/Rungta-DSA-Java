@@ -164,6 +164,44 @@ class Solution {
     /******************** Sliding Windows && Two Pointers *****************************/
 
     // https://leetcode.com/problems/product-of-array-except-self/
+/*
+class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        int cntZ = 0 , n = nums.length;
+        int [] ans = new int[n];
+        int totP = 1;
+
+        for(int i = 0; i < n; ++i)
+             if(nums[i] == 0)
+                 cntZ++;
+
+        if(cntZ >= 2) {
+            return ans;
+        }
+
+        if(cntZ == 1) {
+           for(int i = 0; i < n; ++i)
+             if(nums[i] != 0)
+              totP *= nums[i];
+
+            for(int i = 0; i < n; ++i)
+               if(nums[i] == 0)
+                   ans[i] = totP;
+
+            return ans;
+        }
+
+        for(int i = 0; i < n; ++i)
+            totP *= nums[i];
+
+        for(int i = 0; i < n; ++i)
+            ans[i] = totP / nums[i];
+
+        return ans;
+    }
+}
+
+*/
     // https://leetcode.com/problems/maximum-subarray/
     // https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1
 

@@ -14,6 +14,5 @@ public class StackDataStructureContinue {
     // https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1
 
     public static void main(String [] args) {
-        System.out.println("Jai Maa Jagat Janani");
     }
 }

@@ -206,5 +206,8 @@ class Solution {
     // https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1
 
     public static void main(String [] args) {
+        HashMap<HashMap<Integer , Integer> , Integer> mp = new HashMap<>();
+
+
     }
 }

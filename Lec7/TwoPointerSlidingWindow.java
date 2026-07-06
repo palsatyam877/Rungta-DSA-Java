@@ -82,9 +82,75 @@ class Solution {
 
 // https://leetcode.com/problems/k-diff-pairs-in-an-array/
 
+/*
+class Solution {
+    public int findPairs(int[] nums, int k) {
+        int l = 0 , n = nums.length , ans = 0;
+        Arrays.sort(nums);
+
+        if(k == 0) {
+            for(int r = 1; r < n; ++r) {
+                if(nums[r] == nums[r - 1]) {
+                    ++ans;
+
+                    while((r < n) && (nums[r] == nums[r - 1]))
+                       ++r;
+                }
+            }
+
+            return ans;
+        }
+
+        for(int r = 0; r < n; ++r) {
+            while(nums[r] - nums[l] > k)
+                ++l;
+
+            if(nums[r] - nums[l] == k) {
+                ++ans;
+
+                while((r + 1 < n) && (nums[r] == nums[r + 1]))
+                    ++r;
+            }
+        }
+
+        return ans;
+    }
+}
+*/
+
 /******* PRACTICE ********/
 
 // https://leetcode.com/problems/maximum-subarray/
+
+/*
+class Solution {
+    public int maxSubArray(int[] nums) {
+        long pfsum = 0;
+        int n = nums.length;
+        long ans =  -10000000000L;
+
+        if(n == 1)
+           return nums[0];
+
+        TreeSet<Long> ts = new TreeSet<>();
+
+        for(int i = 0; i < n; ++i) {
+            pfsum += nums[i];
+
+            if((ts.size() > 0) && (ts.first() <= 0) ) {
+                ans = Math.max(pfsum - ts.first() , ans);
+            }
+
+            ans = Math.max(ans , pfsum);
+
+            ts.add(pfsum);
+        }
+
+        return (int)ans;
+    }
+}
+
+*/
 
 // https://leetcode.com/problems/sliding-window-maximum/
 

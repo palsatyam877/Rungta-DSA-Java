@@ -36,6 +36,50 @@ class Solution {
 
 // https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1
 
+/*
+class Solution {
+    static List<Integer> firstNegInt(int arr[], int k) {
+        // code here
+
+        int n = arr.length;
+
+        ArrayDeque<Integer> qu = new ArrayDeque<>();
+
+        for(int i = 0; i < k; ++i)
+             if(arr[i] < 0)
+                 qu.offer(arr[i]);
+
+        int l = 0;
+
+        List<Integer> ans = new ArrayList<>();
+
+        if(qu.size() > 0)
+          ans.add(qu.peek());
+        else
+           ans.add(0);
+
+
+        for(int r = k; r < n; ++r) {
+            if(arr[l] < 0)
+                 qu.poll();
+
+            if(arr[r] < 0)
+                 qu.offer(arr[r]);
+
+            if(qu.size() > 0)
+                ans.add(qu.peek());
+            else
+               ans.add(0);
+
+            ++l;
+        }
+
+        return ans;
+    }
+}
+
+*/
+
 // https://leetcode.com/problems/k-diff-pairs-in-an-array/
 
 /******* PRACTICE ********/

@@ -13,6 +13,27 @@ import java.util.StringTokenizer;
 
 // https://leetcode.com/problems/max-consecutive-ones/
 
+/*
+class Solution {
+    public int findMaxConsecutiveOnes(int[] nums) {
+        int ans = 0 , n = nums.length , l = 0 , r = 0;
+
+        for(int i = 0; i < n; ++i) {
+            if(nums[i] == 0) {
+                r++;
+                l = r;
+            } else {
+                ans = Math.max(r - l + 1 , ans);
+                r++;
+            }
+        }
+
+        return ans;
+    }
+}
+
+*/
+
 // https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1
 
 // https://leetcode.com/problems/k-diff-pairs-in-an-array/

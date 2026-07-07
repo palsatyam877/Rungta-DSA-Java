@@ -152,12 +152,6 @@ class Solution {
 
 */
 
-// https://leetcode.com/problems/sliding-window-maximum/
-
-// https://leetcode.com/problems/sum-of-subarray-minimums/
-
-// https://leetcode.com/problems/minimum-window-substring/
-
 public class TwoPointerSlidingWindow {
     public static void main(String [] args) throws IOException {
         // Initialize Fast Input

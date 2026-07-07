@@ -9,6 +9,48 @@ import java.util.*;
 
 // https://leetcode.com/problems/sum-of-subarray-minimums/
 
+/*
+class Solution {
+    public int sumSubarrayMins(int[] arr) {
+        Stack<Integer> stk = new Stack<>();
+        int n = arr.length;
+
+        int [] nse = new int[n];
+
+        for(int i = 0; i < n; ++i) {
+            nse[i] = n;
+
+            while((stk.size() > 0) && (arr[stk.peek()] > arr[i])) {
+                nse[stk.peek()] = i;
+                stk.pop();
+            }
+
+            stk.push(i);
+        }
+
+        for(int i = 0; i < n; ++i)
+          System.out.print(nse[i] + " ");
+
+        long [] ans = new long[n + 1];
+        long mod = 1000000007;
+        long Ans = 0;
+
+        for(int i = n - 1; i >= 0; --i) {
+            int inx = nse[i];
+            ans[i] = ans[inx];
+
+            ans[i] += (((inx - i) * arr[i]) % mod);
+            ans[i] %= mod;
+
+            Ans += ans[i]; Ans %= mod;
+        }
+
+        return (int)Ans;
+    }
+}
+
+*/
+
 // https://leetcode.com/problems/sum-of-all-odd-length-subarrays/   // O(N)
 
 /*

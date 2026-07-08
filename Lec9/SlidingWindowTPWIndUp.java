@@ -9,6 +9,51 @@ import java.io.OutputStreamWriter;
 
 // https://leetcode.com/problems/sliding-window-maximum/description/
 
+/*
+class Solution {
+    class Pair implements Comparable<Pair> {
+        Integer first , second;
+
+        Pair(Integer first , Integer second) {
+            this.first = first;
+            this.second = second;
+        }
+
+        @Override
+        public int compareTo(Pair that) {
+            if(that.first.compareTo(this.first) == 0)
+                return this.second.compareTo(that.second);
+
+            return that.first.compareTo(this.first);
+        }
+    }
+
+    public int[] maxSlidingWindow(int[] arr, int k) {
+        TreeSet<Pair> ts = new TreeSet<>();
+        int n = arr.length;
+
+        int [] ans = new int[n - k + 1];
+
+        for(int i = 0; i < k; ++i)
+            ts.add(new Pair( arr[i] , i ));
+
+        int l = 0;
+        ans[l] = ts.first().first;
+
+        for(int i = k; i < n; ++i) {
+            ts.remove(new Pair(arr[l] , l));
+            ts.add(new Pair(arr[i] , i));
+
+            ++l;
+            ans[l] = ts.first().first;
+        }
+
+        return ans;
+    }
+}
+
+*/
+
 // https://leetcode.com/problems/minimum-window-substring/
 
 // https://cses.fi/problemset/task/1652

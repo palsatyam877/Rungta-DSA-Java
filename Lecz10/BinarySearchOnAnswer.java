@@ -12,6 +12,6 @@ package Lecz10;
 public class BinarySearchOnAnswer {
 
     public static void main(String [] args) {
-        System.out.println("Jai Maa Jagat Janani");
+
     }
 }

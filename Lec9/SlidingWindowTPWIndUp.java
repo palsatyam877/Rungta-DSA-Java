@@ -56,6 +56,74 @@ class Solution {
 
 // https://leetcode.com/problems/minimum-window-substring/
 
+/*
+class Solution {
+    public String minWindow(String s, String t) {
+        int n = s.length() , m = t.length();
+
+        int [][] freq = new int[n + 1][70];
+
+        for(int i = 0; i < n; ++i) {
+            freq[i + 1][s.charAt(i) - 'A']++;
+
+            for(int j = 0; j < 70; ++j)
+                freq[i + 1][j] += freq[i][j];
+        }
+
+        int [] tar = new int [70];
+
+        for(int i = 0; i < m; ++i)
+            tar[t.charAt(i) - 'A']++;
+
+        int val = 1000000 , ix = -1 , jx = -1;
+
+        for(int i = 1; i <= n; ++i) {
+            int lo = 1 , hi = i;
+
+            while(lo <= hi) {
+                int mid = (lo + hi) / 2;
+
+                int [] t1 = new int [70];
+
+                boolean isT = true;
+
+                for(int j = 0; j < 70; ++j) {
+                    t1[j] = freq[i][j] - freq[mid - 1][j];
+
+                    if(t1[j] < tar[j])
+                       isT = false;
+                }
+
+                if(isT) {
+                    lo = mid + 1;
+
+                  if(i - mid + 1 < val)  {
+                    val = i - mid + 1;
+                    ix = mid - 1;
+                    jx = i - 1;
+                  }
+                } else {
+                    hi = mid - 1;
+                }
+            }
+        }
+
+        StringBuilder ans = new StringBuilder();
+
+        if(ix == -1) {
+            String a = "";
+            return a;
+        } else {
+            for(int i = ix; i <= jx; ++i)
+                ans.append(s.charAt(i));
+
+            return ans.toString();
+        }
+    }
+}
+
+*/
+
 // https://cses.fi/problemset/task/1652
 
 // https://leetcode.com/problems/sliding-window-median/

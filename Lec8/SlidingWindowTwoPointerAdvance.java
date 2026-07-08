@@ -115,17 +115,9 @@ class Solution {
 
 */
 
-// https://leetcode.com/problems/sliding-window-maximum/
-
-// https://leetcode.com/problems/minimum-window-substring/
-
-// https://leetcode.com/problems/sliding-window-median/
-
-// https://www.geeksforgeeks.org/problems/decode-the-string2444/1
-
 public class SlidingWindowTwoPointerAdvance {
 
-    public static void main(String [] args) {
-        System.out.println("Lec 8");
+    public static void main(String [] args)  {
+        System.out.println("Hello World");
     }
 }

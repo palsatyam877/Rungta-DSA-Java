@@ -1,4 +1,4 @@
-//package Lec9;
+package Lec9;
 import java.util.*;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -125,8 +125,6 @@ class Solution {
 */
 
 // https://cses.fi/problemset/task/1652
-
-// https://leetcode.com/problems/sliding-window-median/
 
 public class SlidingWindowTPWIndUp {
 

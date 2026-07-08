@@ -158,10 +158,43 @@ public class SlidingWindowTPWIndUp {
 
         // write logic
 
+        int [][] pfsum = new int [n + 1][n + 1];
+
+        for(int i = 1; i <= n; ++i)
+            for(int j = 1;j <= n; ++j) {
+                int cSum = mat[i - 1][j - 1] == '*' ? 1 : 0;
+                pfsum[i][j] = pfsum[i - 1][j] + pfsum[i][j - 1] - pfsum[i - 1][j - 1] + cSum;
+            }
+
+        System.out.println("_____________________");
+
+        for(int i = 1; i <= n; ++i) {
+            for (int j = 1; j <= n; ++j) {
+                bw.write(String.valueOf(pfsum[i][j]));
+                bw.write(String.valueOf(" "));
+            }
+            bw.newLine();
+        }
+
+        System.out.println(pfsum[3][4]);
+        System.out.println(pfsum[1][2]);
+        System.out.println(pfsum[2][1]);
+
         for(int i = 0; i < query.length; ++i) {
             int ans = 0;
 
             // write logic
+
+            int i1 = query[i][0];
+            int j1 = query[i][1];
+            int i2 = query[i][2];
+            int j2 = query[i][3];
+
+            System.out.println(i1  +  " " + j1 + " " + i2 + " " + j2 );
+
+
+
+            ans = pfsum[i2][j2] - pfsum[i1 - 1][j1] - pfsum[i2][j2 - 1] + pfsum[i1 - 1][j1 - 1];
 
             bw.write(String.valueOf(ans));
             bw.newLine();

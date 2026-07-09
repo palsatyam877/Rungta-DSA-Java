@@ -120,7 +120,57 @@ class Solution {
 /************************ BINARY SEARCH ON ANSWER ***************************/
 
 // https://leetcode.com/problems/first-bad-version/description/
+
+/* The isBadVersion API is defined in the parent class VersionControl.
+      boolean isBadVersion(long version); */
+
+/*
+public class Solution extends VersionControl {
+    public int firstBadVersion(int n) {
+        long lo = 1 , hi = n , ans = n;
+
+        while(lo <= hi) {
+            long mid = (lo + hi) / 2;
+
+            if(isBadVersion((int)mid)) {
+                ans = mid;
+                hi = mid - 1;
+            } else {
+                lo = mid + 1;
+            }
+        }
+
+        return (int)ans;
+    }
+}
+
+*/
+
 // https://leetcode.com/problems/sqrtx/
+/*
+class Solution {
+    public int mySqrt(int x) {
+        long lo = 1 , hi = x , ans = 0;
+
+        while(lo <= hi) {
+            long mid = (lo + hi) / 2;
+
+            if(mid * mid == x)
+               return (int)mid;
+            else if(mid * mid < x) {
+                ans = mid;
+                lo = mid + 1;
+            } else {
+                hi = mid - 1;
+            }
+        }
+
+        return (int)ans;
+    }
+}
+
+*/
+
 // https://leetcode.com/problems/search-in-rotated-sorted-array/
 // https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
 // https://leetcode.com/problems/koko-eating-bananas/

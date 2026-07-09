@@ -168,10 +168,123 @@ class Solution {
         return (int)ans;
     }
 }
-
 */
 
 // https://leetcode.com/problems/search-in-rotated-sorted-array/
+/*
+class Solution {
+    public int search(int[] arr, int t) {
+        int n = arr.length;
+
+        if(n == 1)
+            if(arr[0] == t)
+                return 0;
+            else
+                return -1;
+
+        if(n == 2) {
+            if(arr[0] == t)
+               return 0;
+            else if(arr[1] == t)
+                 return 1;
+            else
+                return -1;
+        }
+
+        if(arr[n - 1] > arr[0]) {
+            long lo = 0 , hi = n - 1;
+
+            while(lo <= hi) {
+                long mid = (lo + hi) / 2;
+
+                if(arr[(int)mid] > t)
+                   hi = mid - 1;
+                else if(arr[(int)mid] < t)
+                   lo = mid + 1;
+                else
+                    return (int)mid;
+            }
+
+            return -1;
+        }
+
+        // System.out.println("----------");
+
+        if(arr[n - 1] < arr[n - 2]) {
+            if(arr[n - 1] == t)
+               return n - 1;
+
+            long lo = 0 , hi = n - 2;
+
+            while(lo <= hi) {
+                long mid = (lo + hi) / 2;
+
+                if(arr[(int)mid] > t)
+                    hi = mid - 1;
+                else if(arr[(int)mid] < t)
+                    lo = mid + 1;
+                else
+                   return (int)mid;
+            }
+
+            return -1;
+        }
+
+        long lo = 0 , hi = n - 2 , pivot = -1;
+
+        while(lo <= hi) {
+            long mid = (lo + hi) / 2;
+
+            if(arr[(int)mid] > arr[n - 1])
+                lo = mid + 1;
+            else if(arr[(int)mid] < arr[n - 1]) {
+                pivot = mid;
+                hi = mid - 1;
+            }
+        }
+
+        // System.out.println(pivot + " : pivot");
+
+        if(arr[n - 1] == t)
+            return n - 1;
+
+        if(arr[n - 1] > t) {
+            long lo1 = pivot , hi1 = n - 2;
+
+            while(lo1 <= hi1) {
+                long mid = (lo1 + hi1) / 2;
+
+                if(arr[(int)mid] > t)
+                    hi1 = mid - 1;
+                else if(arr[(int)mid] < t)
+                    lo1 = mid + 1;
+                else
+                   return (int)mid;
+            }
+
+        }  else {
+
+            // System.out.println(" &&& ");
+            long lo1 = 0 , hi1 = pivot - 1;
+
+            while(lo1 <= hi1) {
+                long mid = (lo1 + hi1) / 2;
+
+                if(arr[(int)mid] > t)
+                    hi1 = mid - 1;
+                else if(arr[(int)mid] < t)
+                    lo1 = mid + 1;
+                else
+                   return (int)mid;
+            }
+        }
+
+        return -1;
+
+    }
+}
+*/
+
 // https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
 // https://leetcode.com/problems/koko-eating-bananas/
 

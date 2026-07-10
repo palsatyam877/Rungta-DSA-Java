@@ -295,11 +295,6 @@ class Solution {
 }
 */
 
-// https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
-// https://leetcode.com/problems/koko-eating-bananas/
-// https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/
-//
-
 public class BinarySearchOnAnswer {
 
 

@@ -6,8 +6,14 @@ import java.util.StringTokenizer;
 import java.io.BufferedWriter;
 import java.io.OutputStreamWriter;
 
+// https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
+// https://leetcode.com/problems/koko-eating-bananas/
+// https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/
+// https://codeforces.com/contest/1873/problem/E
+
 public class BinarySearchOnAnswerTwo {
     public static void main(String [] args) {
+        System.out.println("Hello World");
     }
 }
 

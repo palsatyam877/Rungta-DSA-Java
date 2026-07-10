@@ -8,7 +8,6 @@ import java.io.OutputStreamWriter;
 
 public class BinarySearchOnAnswerTwo {
     public static void main(String [] args) {
-        System.out.println("Har Har Mahadev");
     }
 }
 

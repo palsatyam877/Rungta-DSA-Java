@@ -128,6 +128,84 @@ class Solution {
 */
 
 // https://leetcode.com/problems/koko-eating-bananas/
+
+/*
+class Solution {
+    public int minEatingSpeed(int[] piles, int h) {
+        int mx = 0 , n = piles.length;
+
+        for(int i = 0; i < n; ++i)
+            mx = Math.max( piles[i] , mx );
+
+        boolean [] kokoS = new boolean[mx + 1];
+
+        for(int speed = 1 ; speed <= mx; ++speed) {
+            int cntH = 0;
+
+            for(int i = 0; i < n; ++i) {
+                cntH += (piles[i] / speed);
+
+                if(piles[i] % speed != 0)
+                   cntH++;
+            }
+
+            if(cntH <= h)
+               kokoS[speed] = true;
+            else
+               kokoS[speed] = false;
+        }
+
+        int ans = 0;
+
+        for(int i = 1; i <= mx; ++i) {
+            if((ans == 0) && (kokoS[i] == true))
+                   ans = i;
+            if(kokoS[i])
+              System.out.print("T ");
+            else
+              System.out.print("F ");
+        }
+
+        return ans;
+    }
+}
+*/
+
+/*
+class Solution {
+    public int minEatingSpeed(int[] piles, int h) {
+        long mx = 0 , n = piles.length;
+
+        for(int i = 0; i < n; ++i)
+            mx = Math.max( piles[i] , mx );
+
+        long lo = 1 , hi = mx;
+        long ans = mx;
+
+        while(lo <= hi) {
+            long speed = (lo + hi) / 2;
+            long cntH = 0;
+
+            for(int i = 0; i < n; ++i) {
+                cntH += (piles[i] / speed);
+
+                if(piles[i] % speed != 0)
+                   cntH++;
+            }
+
+            if(cntH <= h) {
+                ans = speed;
+                hi = speed - 1;
+            } else {
+                lo = speed + 1;
+            }
+        }
+
+        return (int)ans;
+    }
+}
+*/
+
 // https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/
 // https://codeforces.com/contest/1873/problem/E
 

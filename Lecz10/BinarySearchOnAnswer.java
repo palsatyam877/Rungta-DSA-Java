@@ -1,5 +1,12 @@
 package Lecz10;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+import java.io.BufferedWriter;
+import java.io.OutputStreamWriter;
+
 // https://leetcode.com/problems/sliding-window-median/
 
 /*
@@ -116,6 +123,9 @@ class Solution {
 }
 
 */
+
+import java.io.*;
+import java.util.StringTokenizer;
 
 /************************ BINARY SEARCH ON ANSWER ***************************/
 
@@ -287,10 +297,57 @@ class Solution {
 
 // https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
 // https://leetcode.com/problems/koko-eating-bananas/
+// https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/
+//
 
 public class BinarySearchOnAnswer {
 
-    public static void main(String [] args) {
-       // (((((A+(B*C*(D*(E*F+((G))))))))))
+
+    public static void main(String [] args) throws IOException {
+        // Create BufferedReader to read input efficiently
+        BufferedReader br = new BufferedReader
+                (new InputStreamReader(System.in));
+
+        // Read the first line and split it into tokens
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        int t = Integer.parseInt(st.nextToken());
+
+    for(int i = 0; i < t; ++i) {
+        st = new StringTokenizer(br.readLine());
+
+        int n = Integer.parseInt(st.nextToken()), x = Integer.parseInt(st.nextToken());
+
+        st = new StringTokenizer(br.readLine());
+
+        int [] a = new int[n];
+
+        for(int j = 0; j < n; ++j)
+            a[j] = Integer.parseInt(st.nextToken());
+
+        long lo = 1 , hi = 10000000000L;
+        long ans = 10000000000L;
+        while(lo <= hi) {
+            long mid = (lo + hi) / 2;
+            long UL = x;
+
+            for(int l = 0; l < a.length; ++l) {
+                if(a[l] < mid)
+                       UL -= ((1L * mid) - (1L * a[l]));
+            }
+
+            if(UL >= 0) {
+                lo = mid + 1;
+                ans = mid;
+            } else
+                hi = mid - 1;
+        }
+
+        bw.write(String.valueOf(ans));
+        bw.newLine();
+    }
+
+        bw.flush();
     }
 }

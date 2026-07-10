@@ -207,6 +207,103 @@ class Solution {
 */
 
 // https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/
+
+/*
+class Solution {
+    public int minDays(int[] bloomDay, int m, int k) {
+        int n = bloomDay.length;
+        long hi = 0;
+        long ans = -1;
+
+        for(int i = 0; i < n; ++i)
+            hi = Math.max(bloomDay[i] , hi);
+
+        boolean [] monoF = new boolean[(int)hi + 1];
+
+        for(long days = 1; days <= hi; ++days) {
+            long boq = 0 , AdjC = 0;
+
+            for(int i = 0; i < n; ++i)
+               if(bloomDay[i] <= days) {
+                   AdjC++;
+               } else {
+                   boq += (AdjC / k);
+                   AdjC = 0;
+               }
+
+               boq += (AdjC / k);
+
+            if(boq >= m) {
+                if(ans == -1)
+                    ans = days;
+                monoF[(int)days] = true;
+            } else {
+                monoF[(int)days] = false;
+            }
+        }
+
+        for(int i = 1; i <= hi; ++i) {
+            if(monoF[i])
+               System.out.print("T ");
+            else
+              System.out.print("F ");
+        }
+
+        return (int)ans;
+    }
+}
+*/
+
+/*
+class Solution {
+    public int minDays(int[] bloomDay, int m, int k) {
+        int n = bloomDay.length;
+        long hi = 0;
+        long ans = -1;
+
+        for(int i = 0; i < n; ++i)
+            hi = Math.max(bloomDay[i] , hi);
+
+        // boolean [] monoF = new boolean[(int)hi + 1];
+        long lo = 1;
+
+        while(lo <= hi) {
+            long days = (lo + hi) / 2;
+            long boq = 0 , AdjC = 0;
+
+            for(int i = 0; i < n; ++i)
+               if(bloomDay[i] <= days) {
+                   AdjC++;
+               } else {
+                   boq += (AdjC / k);
+                   AdjC = 0;
+               }
+
+               boq += (AdjC / k);
+
+            if(boq >= m) {
+                hi = days - 1;
+                ans = days;
+                // monoF[(int)days] = true;
+            } else {
+                lo = days + 1;
+                // monoF[(int)days] = false;
+            }
+        }
+
+        // for(int i = 1; i <= hi; ++i) {
+        //     if(monoF[i])
+        //        System.out.print("T ");
+        //     else
+        //       System.out.print("F ");
+        // }
+
+        return (int)ans;
+    }
+}
+
+*/
+
 // https://codeforces.com/contest/1873/problem/E
 
 public class BinarySearchOnAnswerTwo {

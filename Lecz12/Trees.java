@@ -1,6 +1,10 @@
 package Lecz12;
 
+import com.sun.source.tree.ThrowTree;
+import com.sun.source.tree.Tree;
+
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 
 public class Trees {
 
@@ -21,20 +25,60 @@ public class Trees {
          x.x = 20;
     }
 
+    public static class TreeNode {
+         int val;
+         ArrayList<TreeNode> children;
+
+         TreeNode(int val) {
+             children = new ArrayList<>();
+             this.val = val;
+         }
+    }
+
     public static void main(String [] args) {
-          Int x = new Int(10);
-          System.out.println(x.x);
+//          Int x = new Int(10);
+//          System.out.println(x.x);
+//
+//          Int x1 = new Int(2);
+//          Int x2 = null;
+//
+//        System.out.println(x1 == x2);
+//
+//          System.out.println(x);
+//          f(x);
+//          System.out.println(x);
+//
+//        ArrayDeque<Integer> qu = new ArrayDeque<>();
 
-          Int x1 = new Int(2);
-          Int x2 = null;
+          TreeNode root = new TreeNode(1);
+          root.children.add(new TreeNode(4));
+          root.children.add(new TreeNode(3));
+          root.children.add(new TreeNode(2));
 
-        System.out.println(x1 == x2);
+          TreeNode curr3 =  root.children.get(1);
 
-          System.out.println(x);
-          f(x);
-          System.out.println(x);
+          curr3.children.add(new TreeNode(5));
+          curr3.children.add(new TreeNode(6));
+          curr3.children.add(new TreeNode(7));
+          curr3.children.add(new TreeNode(8));
 
-        ArrayDeque<Integer> qu = new ArrayDeque<>();
+          TreeNode curr8 = curr3.children.get(3);
+
+          curr8.children.add(new TreeNode(11));
+          curr8.children.add(new TreeNode(10));
+          curr8.children.add(new TreeNode(9));
+
+          ArrayDeque<TreeNode> qu = new ArrayDeque<>();
+          qu.offer(root);
+
+          while(qu.size() > 0) {
+              TreeNode c = qu.poll();
+              System.out.print(c.val + " ");
+
+              for(int i = 0; i < c.children.size(); ++i)
+                  qu.offer(c.children.get(i));
+          }
+
     }
 }
 
@@ -84,8 +128,29 @@ public class Trees {
                 a[j] = Integer.parseInt(st.nextToken());
 
             long ans = 0;
+            // BS on Height;
 
-            // Write Code here
+            long lo = 0 , hi = 2 * 1000000000;
+
+            while(lo <= hi) {
+                long mid = (lo + hi) / 2;
+                long req = 0;
+
+                for (int j = 0; j < n; ++j) {
+                    if (a[j] > mid) {
+                        //
+                    } else {
+                        req += (mid - a[j]);
+                    }
+                }
+
+                if (req > x) {
+                    hi = mid - 1;
+                } else {
+                    ans = mid;
+                    lo = mid + 1;
+                }
+            }
 
             bw.write(String.valueOf(ans));
             bw.newLine();
@@ -96,4 +161,3 @@ public class Trees {
 }
 
 */
-

@@ -2,9 +2,12 @@ package Lecz11;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 import java.io.BufferedWriter;
 import java.io.OutputStreamWriter;
+import java.util.*;
+
 
 // https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
 
@@ -307,56 +310,127 @@ class Solution {
 // https://codeforces.com/contest/1873/problem/E
 
 public class BinarySearchOnAnswerTwo {
-    public static void main(String [] args) {
-        System.out.println("Hello World");
-    }
-}
+    public static class CustomDS implements Comparable<CustomDS> {
+        Integer a , b , c , d;
 
-
-
-/************ E. Building an Aquarium ****************/
-
-/*
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
-import java.io.BufferedWriter;
-import java.io.OutputStreamWriter;
-
-public class Main {
-    public static void main(String [] args) throws IOException {
-        // Create BufferedReader to read input efficiently
-        BufferedReader br = new BufferedReader
-                (new InputStreamReader(System.in));
-
-        // Read the first line and split it into tokens
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-
-        int t = Integer.parseInt(st.nextToken());
-
-        for(int i = 0; i < t; ++i) {
-            st = new StringTokenizer(br.readLine());
-
-            int n = Integer.parseInt(st.nextToken()), x = Integer.parseInt(st.nextToken());
-
-            st = new StringTokenizer(br.readLine());
-
-            int [] a = new int[n];
-
-            for(int j = 0; j < n; ++j)
-                a[j] = Integer.parseInt(st.nextToken());
-
-            long ans = 0;
-
-            // Write Code here
-
-            bw.write(String.valueOf(ans));
-            bw.newLine();
+        CustomDS(Integer a , Integer b , Integer c , Integer d) {
+            this.a = a; this.b = b; this.c = c; this.d = d;
         }
 
-        bw.flush();
+        @Override
+        public String toString() {
+            return "{ " + this.a + " , " + this.b + " , " + this.c + " , " + this.d + " }";
+        }
+
+        @Override
+        public int compareTo(CustomDS that) {
+            if(this.a.compareTo(that.a) == 0) {
+                if(that.b.compareTo(this.b) == 0) {
+                    if(this.c.compareTo(that.c) == 0)
+                        return that.d.compareTo(this.d);
+                    return this.c.compareTo(that.c);
+                }
+
+                return that.b.compareTo(this.b);
+            }
+
+            return this.a.compareTo(that.a);
+        }
+    }
+
+    public static int rN() {
+          return (int)(Math.random() * 10);
+    }
+
+    static int ini = -1;
+
+    public static  int f(int x) {
+        int ans = 0;
+
+        if(x == 0) ans = 8;
+        if(x == 1) ans = 10;
+
+        if(x <= 1) {
+            if(ini + 1 == x) {
+                ini++;
+//                System.out.print(ans + " ");
+            }
+            return ans;
+        }
+
+        ans = f(x - 1) + f(x - 2);
+
+        if(ini + 1 == x) {
+            ini++;
+//            System.out.print(ans + " ");
+        }
+        return ans;
+    }
+
+    public static void main(String [] args) {
+//        Integer x = 5 , y = 10;
+//        System.out.println(y.compareTo(x));
+
+//        ArrayList<CustomDS> arrL = new ArrayList<>();
+//        ArrayList<Integer> arrL1 = new ArrayList<>();
+
+//        for(int i = 0; i < 3; ++i) {
+//            arrL.add(new CustomDS(rN() , rN() , rN() , rN()));
+////            arrL1.add(i);
+//        }
+
+//        arrL.add(new CustomDS(4 , 8 , 13 , -8));
+//        arrL.add(new CustomDS(4 , 8 , 13 , 2));
+//
+//
+//        System.out.println(arrL);
+//
+//        Collections.sort(arrL);
+//
+//        System.out.println(arrL);
+
+//        System.out.println(a);
+
+//        int i = 1;
+//        while(true) {
+//             i = (i << 1);
+//            System.out.println(i);
+//
+//            if(i >= (1 << 7))
+//                   break;
+//        }
+//
+//        System.out.println("---------------");
+//
+//        while(i > 1) {
+//            i = (i >> 1);
+//
+//            System.out.println(i);
+//        }
+
+//        ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
+//
+//        for(int mask = 0; mask < (1 << 10); ++mask) {
+//            ArrayList<Integer> curr = new ArrayList<>();
+//
+//            for(int bit = 0; bit < 10; ++bit) {
+//                if((mask & (1 << bit)) != 0) {
+//                    curr.add(bit);
+//                }
+//            }
+//
+//            if(curr.size() == 3)
+//                ans.add(curr);
+//        }
+//
+//        System.out.println(ans.size());
+//
+//        for(ArrayList<Integer> c : ans) {
+//            System.out.println(c);
+//        }
+
+        int x = f(5);
+
+        System.out.println(x);
     }
 }
-*/

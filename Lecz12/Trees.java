@@ -25,14 +25,23 @@ public class Trees {
          x.x = 20;
     }
 
-    public static class TreeNode {
-         int val;
-         ArrayList<TreeNode> children;
+//    public static class TreeNode {
+//         int val;
+//         ArrayList<TreeNode> children;
+//
+//         TreeNode(int val) {
+//             children = new ArrayList<>();
+//             this.val = val;
+//         }
+//    }
 
-         TreeNode(int val) {
-             children = new ArrayList<>();
-             this.val = val;
-         }
+    public static class TreeNode {
+        int val;
+        TreeNode left , right;
+
+        TreeNode(int val) {
+            this.val = val;
+        }
     }
 
     public static void main(String [] args) {
@@ -50,36 +59,59 @@ public class Trees {
 //
 //        ArrayDeque<Integer> qu = new ArrayDeque<>();
 
-          TreeNode root = new TreeNode(1);
-          root.children.add(new TreeNode(4));
-          root.children.add(new TreeNode(3));
-          root.children.add(new TreeNode(2));
+//          TreeNode root = new TreeNode(1);
+//          root.children.add(new TreeNode(4));
+//          root.children.add(new TreeNode(3));
+//          root.children.add(new TreeNode(2));
+//
+//          TreeNode curr3 =  root.children.get(1);
+//
+//          curr3.children.add(new TreeNode(5));
+//          curr3.children.add(new TreeNode(6));
+//          curr3.children.add(new TreeNode(7));
+//          curr3.children.add(new TreeNode(8));
+//
+//          TreeNode curr8 = curr3.children.get(3);
+//
+//          curr8.children.add(new TreeNode(11));
+//          curr8.children.add(new TreeNode(10));
+//          curr8.children.add(new TreeNode(9));
+//
+//          ArrayDeque<TreeNode> qu = new ArrayDeque<>();
+//          qu.offer(root);
+//
+//          while(qu.size() > 0) {
+//              TreeNode c = qu.poll();
+//              System.out.print(c.val + " ");
+//
+//              for(int i = 0; i < c.children.size(); ++i)
+//                  qu.offer(c.children.get(i));
+//          }
 
-          TreeNode curr3 =  root.children.get(1);
+//        TreeNode root = new TreeNode(10);
+//        root.left = new TreeNode(8);
+//        root.right = new TreeNode(9);
+//
+//        root.right.left = new TreeNode(12);
 
-          curr3.children.add(new TreeNode(5));
-          curr3.children.add(new TreeNode(6));
-          curr3.children.add(new TreeNode(7));
-          curr3.children.add(new TreeNode(8));
-
-          TreeNode curr8 = curr3.children.get(3);
-
-          curr8.children.add(new TreeNode(11));
-          curr8.children.add(new TreeNode(10));
-          curr8.children.add(new TreeNode(9));
-
-          ArrayDeque<TreeNode> qu = new ArrayDeque<>();
-          qu.offer(root);
-
-          while(qu.size() > 0) {
-              TreeNode c = qu.poll();
-              System.out.print(c.val + " ");
-
-              for(int i = 0; i < c.children.size(); ++i)
-                  qu.offer(c.children.get(i));
-          }
-
-    }
+//        root.right.left.left = new TreeNode(7);
+//        root.right.left.right = new TreeNode(11);
+//
+//        ArrayDeque<TreeNode> qu = new ArrayDeque<>();
+//        qu.offer(root);
+//
+//        while(qu.size() > 0) {
+//            TreeNode c = qu.poll();
+//            System.out.print(c.val + " ");
+//
+//            if(c.left != null)
+//                 qu.offer(c.left);
+//
+//            if(c.right != null)
+//                qu.offer(c.right);
+//        }
+//
+//    }
 }
 
 // https://codeforces.com/problemset/problem/1873/E

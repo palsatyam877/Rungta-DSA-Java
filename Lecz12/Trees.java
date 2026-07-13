@@ -119,9 +119,109 @@ public class Trees {
                             /***********Trees***********/
 
 // https://leetcode.com/problems/maximum-depth-of-binary-tree/description/
+
+/*
+class Solution {
+    public int maxDepth(TreeNode root) {
+        if(root == null)
+           return 0;
+
+        return Math.max(maxDepth(root.left) , maxDepth(root.right)) + 1;
+    }
+}
+*/
+
 // https://leetcode.com/problems/diameter-of-binary-tree/
+
+/*
+class Solution {
+    int D = 0;
+
+    public int f(TreeNode curr) {
+        if(curr == null)
+            return 0;
+
+        int mxL = f(curr.left) , mxR = f(curr.right);
+
+        D = Math.max(mxL + mxR + 1 , D);
+
+        return Math.max(mxL , mxR) + 1;
+    }
+    public int diameterOfBinaryTree(TreeNode root) {
+        f(root);
+        return D - 1;
+    }
+}
+
+*/
+
 // https://leetcode.com/problems/balanced-binary-tree/submissions/
+
+/*
+class Solution {
+    public int maxDepth(TreeNode root) {
+        if(root == null)
+           return 0;
+
+        int mxL = 0;
+
+        return Math.max(maxDepth(root.left) , maxDepth(root.right)) + 1;
+    }
+
+    public boolean isBalanced(TreeNode root) {
+        int mxL = 0 , mxR = 0;
+
+        if(root == null)
+           return true;
+
+        mxL = maxDepth(root.left); mxR = maxDepth(root.right);
+
+        boolean ans = true;
+
+        if(root.left != null)
+           ans &= isBalanced(root.left);
+
+        if(root.right != null)
+           ans &= isBalanced(root.right);
+
+        if(Math.abs(mxL - mxR) > 1)
+            ans &= false;
+
+         return ans;
+    }
+}
+*/
+
 // https://leetcode.com/problems/same-tree/
+/*
+class Solution {
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        if(((p == null) && (q != null)) || ((p != null) && (q == null)))
+           return false;
+
+                if((p == null) && (q == null) )
+            return true;
+
+        if(((p.left == null) && (q.left != null)) || ((p.left != null) && (q.left == null)))
+           return false;
+
+        if(((p.right == null) && (q.right != null)) || ((p.right != null) && (q.right == null)))
+           return false;
+
+        boolean ans = p.val == q.val;
+
+        if(p.left != null)
+            ans &= isSameTree(p.left , q.left);
+
+        if(p.right != null)
+            ans &= isSameTree(p.right , q.right);
+
+        return ans;
+    }
+}
+
+*/
+
 // https://leetcode.com/problems/subtree-of-another-tree/
 // https://leetcode.com/problems/binary-tree-level-order-traversal/
 

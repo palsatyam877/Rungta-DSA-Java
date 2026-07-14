@@ -99,6 +99,66 @@ class Solution {
 */
 
 // https://leetcode.com/problems/binary-tree-right-side-view/
+
+/*
+class Solution {
+    class Pair {
+        TreeNode first;
+        Integer second;
+
+        Pair(TreeNode first, Integer second) {
+            this.first = first;
+            this.second = second;
+        }
+    }
+
+    public List<Integer> rightSideView(TreeNode root) {
+        if (root == null) {
+            List<Integer> a = new ArrayList<>();
+            return a;
+        }
+
+        ArrayDeque<Pair> qu = new ArrayDeque<>();
+
+        qu.offer(new Pair(root, 0));
+        int currLevel = 0;
+        List<Integer> ans = new ArrayList<>();
+        ArrayList<Integer> currD = new ArrayList<>();
+        // ans.add(root.val);
+
+        int prev = -1;
+
+        while (qu.size() > 0) {
+            Pair curr = qu.poll();
+
+            if (curr.second > currLevel) {
+                ans.add(prev);
+                currD = new ArrayList<>();
+
+                currD.add(curr.first.val);
+                currLevel = curr.second;
+            } else {
+                currD.add(curr.first.val);
+            }
+
+            prev = curr.first.val;
+
+            if (curr.first.left != null)
+                qu.offer(new Pair(curr.first.left, curr.second + 1));
+
+            if (curr.first.right != null)
+                qu.offer(new Pair(curr.first.right, curr.second + 1));
+        }
+
+        if (currD.size() > 0)
+            ans.add(prev);
+
+        return ans;
+
+    }
+}
+*/
+
 // https://leetcode.com/problems/count-good-nodes-in-binary-tree/description/
 // https://leetcode.com/problems/kth-smallest-element-in-a-bst/
 // https://leetcode.com/problems/validate-binary-search-tree/

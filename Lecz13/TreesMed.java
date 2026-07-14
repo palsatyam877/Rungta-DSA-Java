@@ -1,6 +1,49 @@
 package Lecz13;
 
 // https://leetcode.com/problems/subtree-of-another-tree/
+/*
+class Solution {
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        if(((p == null) && (q != null)) || ((p != null) && (q == null)))
+            return false;
+
+        if((p == null) && (q == null) )
+            return true;
+
+        if(((p.left == null) && (q.left != null)) || ((p.left != null) && (q.left == null)))
+            return false;
+
+        if(((p.right == null) && (q.right != null)) || ((p.right != null) && (q.right == null)))
+            return false;
+
+        boolean ans = p.val == q.val;
+
+        if(p.left != null)
+            ans &= isSameTree(p.left , q.left);
+
+        if(p.right != null)
+            ans &= isSameTree(p.right , q.right);
+
+        return ans;
+    }
+
+    public boolean isSubtree(TreeNode root, TreeNode subRoot) {
+        boolean f = isSameTree(root , subRoot);
+
+        if(f)
+            return true;
+
+        if(root.left != null)
+            f |= isSubtree(root.left , subRoot); // f = f | isSubtree(root.left , subRoot);
+
+        if(root.right != null)
+            f |= isSubtree(root.right , subRoot);
+
+        return f;
+    }
+}
+*/
+
 // https://leetcode.com/problems/binary-tree-level-order-traversal/
 /*
 class Solution {

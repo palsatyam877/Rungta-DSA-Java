@@ -162,6 +162,8 @@ class Solution {
 // https://leetcode.com/problems/count-good-nodes-in-binary-tree/description/
 // https://leetcode.com/problems/kth-smallest-element-in-a-bst/
 // https://leetcode.com/problems/validate-binary-search-tree/
+// https://leetcode.com/problems/binary-tree-maximum-path-sum/
+// https://leetcode.com/problems/number-of-islands/
 
 import java.util.ArrayList;
 
@@ -169,6 +171,6 @@ public class TreesMed {
 
     public static void main(String [] args) {
         System.out.println("Hello Trwees");
-        ArrayList<> a = new ArrayList();
+        ArrayList<Integer> a = new ArrayList();
     }
 }

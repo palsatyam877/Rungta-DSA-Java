@@ -54,8 +54,6 @@ class Solution {
 
 */
 
-// https://leetcode.com/problems/add-two-numbers/
-
 // Linked List
 class Node {
     int val;

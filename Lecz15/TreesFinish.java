@@ -130,12 +130,46 @@ class Solution {
 
 */
 
-                    /****************** Linked list *******************/
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-  // https://leetcode.com/problems/add-two-numbers/
+/****************** Linked list *******************/
 
 public class TreesFinish {
+    public static class Node {
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
     public static void main(String [] args) {
-        System.out.println("Hello");
+        ArrayList<Integer> arL = new ArrayList<>( List.of(4 , -1 , 7 , 9 , 11));
+
+        Node head = null;
+        Node curr = null;
+
+        for(int i = 0; i < arL.size(); ++i) {
+            Node nw = new Node(arL.get(i));
+
+            if(curr == null) {
+                curr = nw;
+                head = nw;
+            } else {
+                curr.next = nw;
+                curr = nw;
+            }
+        }
+
+        Node head1 = head;
+
+        while(head != null) {
+            System.out.print(head.data + " ");
+            head = head.next;
+        }
     }
 }

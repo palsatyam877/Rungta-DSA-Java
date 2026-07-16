@@ -54,11 +54,36 @@ class Solution {
 
 */
 
-// https://leetcode.com/problems/validate-binary-search-tree/
-// https://leetcode.com/problems/binary-tree-maximum-path-sum/
-// https://leetcode.com/problems/number-of-islands/
+// https://leetcode.com/problems/add-two-numbers/
+
+// Linked List
+class Node {
+    int val;
+    Node next;
+
+    Node(int val) {
+        this.val = val;
+    }
+}
 
 public class TreeContinue {
     public static void main(String [] args) {
+        Node n1 = new Node(5);
+        Node n2 = new Node(9);
+        Node n3 = new Node(-10);
+        Node n4 = new Node(-12);
+        Node n5 = new Node(-15);
+
+        n1.next = n2;
+        n2.next = n3;
+        n3.next = n4;
+        n4.next = n5;
+
+        Node curr = n1;
+
+        while(curr != null) {
+            System.out.print(curr.val + " ");
+            curr = curr.next;
+        }
     }
 }

@@ -3,9 +3,10 @@ package Lecz16;
 import java.util.*;
 import java.util.Scanner;
 
-/***************** Dijoint St Union ***************/
+/***************** Dijoint Set Union ***************/
+// https://leetcode.com/problems/find-if-path-exists-in-graph/description/
 
-
+/***************** Liunked List ***************/
 // https://leetcode.com/problems/add-two-numbers/
 // https://leetcode.com/problems/remove-nth-node-from-end-of-list/
 // https://leetcode.com/problems/add-two-numbers/

@@ -8,7 +8,80 @@ import java.util.Scanner;
 
 /***************** Liunked List ***************/
 // https://leetcode.com/problems/add-two-numbers/
+
+/*
+class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        int carry = 0;
+        ListNode ansCurr = null , ansHead = null;
+
+        while((l1 != null) && (l2 !=  null)) {
+            int val = (l1.val + l2.val + carry) , rem = val % 10;
+
+            if(val > 9)
+               carry = 1;
+            else
+               carry = 0;
+
+            if(ansHead == null) {
+                ansHead = new ListNode(rem);
+                ansCurr = ansHead;
+            } else {
+                ansCurr.next = new ListNode(rem);
+                ansCurr = ansCurr.next;
+            }
+
+            l1 = l1.next;
+            l2 = l2.next;
+        }
+
+        while((l1 != null)) {
+            int val = (l1.val + carry) , rem = val % 10;
+
+            if(val > 9)
+               carry = 1;
+            else
+               carry = 0;
+
+            if(ansHead == null) {
+                ansHead = new ListNode(rem);
+                ansCurr = ansHead;
+            } else {
+                ansCurr.next = new ListNode(rem);
+                ansCurr = ansCurr.next;
+            }
+
+            l1 = l1.next;
+        }
+
+        while((l2 !=  null)) {
+            int val = (l2.val + carry) , rem = val % 10;
+
+            if(val > 9)
+               carry = 1;
+            else
+               carry = 0;
+
+            if(ansHead == null) {
+                ansHead = new ListNode(rem);
+                ansCurr = ansHead;
+            } else {
+                ansCurr.next = new ListNode(rem);
+                ansCurr = ansCurr.next;
+            }
+            l2 = l2.next;
+        }
+
+        if(carry > 0)
+            ansCurr.next = new ListNode(carry);
+
+        return ansHead;
+    }
+}
+*/
+
 // https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+
 // https://leetcode.com/problems/add-two-numbers/
 // https://leetcode.com/problems/linked-list-cycle-ii/
 // https://leetcode.com/problems/rotate-list/

@@ -126,10 +126,6 @@ class Solution {
 }
 */
 
-// https://leetcode.com/problems/add-two-numbers/
-// https://leetcode.com/problems/linked-list-cycle-ii/
-// https://leetcode.com/problems/rotate-list/
-
 public class LinkedList {
     public static class DSU {
         public static int [] p , sz;

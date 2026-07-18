@@ -82,6 +82,50 @@ class Solution {
 
 // https://leetcode.com/problems/remove-nth-node-from-end-of-list/
 
+/*
+class Solution {
+    boolean f = false;
+
+    class Int {
+        int cnt;
+
+        Int(int cnt) {
+            this.cnt = cnt;
+        }
+    }
+
+    public void f(ListNode curr , Int X) {
+        if(curr == null)
+           return;
+
+        f(curr.next , X);
+        X.cnt--;
+
+        if(X.cnt == 0) {
+            if(curr.next == null) {
+
+            } else {
+               f = true;
+               curr.next = curr.next.next;
+            }
+        }
+    }
+
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        f = false;
+        Int X = new Int(n + 1);
+
+        f(head , X);
+
+        if(!f) {
+           head = head.next;
+        }
+
+        return head;
+    }
+}
+*/
+
 // https://leetcode.com/problems/add-two-numbers/
 // https://leetcode.com/problems/linked-list-cycle-ii/
 // https://leetcode.com/problems/rotate-list/

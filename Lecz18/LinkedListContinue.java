@@ -72,6 +72,41 @@ class Solution {
 */
 
 // https://leetcode.com/problems/copy-list-with-random-pointer/
+/*
+class Solution {
+    public Node copyRandomList(Node head) {
+        HashMap<Node,Node> mp = new HashMap<>();
+
+        Node temp = head;
+        Node head1 = null , thead = null;
+
+        while(temp != null) {
+            if(thead == null) {
+                head1 = thead = new Node(temp.val);
+                mp.put(temp , thead);
+            } else {
+                thead.next = new Node(temp.val);
+                thead = thead.next;
+                mp.put(temp , thead);
+            }
+
+            temp = temp.next;
+        }
+
+        temp = head;
+        thead = head1;
+
+        while(temp != null) {
+            thead.random = mp.get(temp.random);
+            temp = temp.next;
+            thead = thead.next;
+        }
+
+        return head1;
+    }
+}
+*/
+
 // https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
 
 import Lecz12.Trees;

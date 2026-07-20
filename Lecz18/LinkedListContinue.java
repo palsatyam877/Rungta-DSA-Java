@@ -11,7 +11,6 @@ import java.util.TreeMap;
 
 public class LinkedListContinue {
     public static void main(String [] args) {
-        System.out.println("Jai Maa Bhavani");
         TreeMap<Integer , Integer> x = new TreeMap<>();
 
         int Cprefix = 0;

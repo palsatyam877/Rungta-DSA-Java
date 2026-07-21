@@ -14,11 +14,7 @@ import java.util.Stack;
 
 public class LinkedListOver {
     public static void main(String [] args) {
-        System.out.println("Jai Maa Jagat Janani");
-
         StringBuilder sb = new StringBuilder();
-
         Stack<Integer> stk = new Stack<>();
-
     }
 }

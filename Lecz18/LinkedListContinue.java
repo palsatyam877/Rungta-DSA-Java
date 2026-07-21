@@ -107,8 +107,6 @@ class Solution {
 }
 */
 
-// https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
-
 import Lecz12.Trees;
 
 import java.util.ArrayDeque;

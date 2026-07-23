@@ -48,7 +48,7 @@ class Solution {
 }
 */
 
-// https://leetcode.com/problems/find-the-k-th-character-in-string-game-i/
+// x
 // https://www.geeksforgeeks.org/problems/reverse-a-stack/1
 
 public class LinkedListOver {

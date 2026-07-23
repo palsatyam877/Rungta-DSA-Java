@@ -1,5 +1,7 @@
 package MyClass;
 
+import java.sql.SQLOutput;
+
 public class MyClass {
 
 //    public static int f(int n , int [] arr) {
@@ -48,10 +50,34 @@ public class MyClass {
 //              sum += arr[i];
 //
 //        System.out.println(sum);
-         int n = arr.length;
+//         int n = arr.length;
 
 //         System.out.println(f(arr , 0 , n - 1));
-         System.out.println(fib(15));
-         System.out.println(cnt + " : cnt");
+//         System.out.println(fib(15));
+//         System.out.println(cnt + " : cnt");
+
+           int n = 13;
+
+           for(int i = 30; i >= 0; --i) {
+               if((n & (1 << i)) > 0) {
+                   System.out.print("1");
+               } else {
+                   System.out.print("0");
+               }
+           }
+
+           System.out.println();
+
+           n = n << 3;
+
+        for(int i = 30; i >= 0; --i) {
+            if((n & (1 << i)) > 0) {
+                System.out.print("1");
+            } else {
+                System.out.print("0");
+            }
+        }
+
+//           System.out.println(x);
     }
 }

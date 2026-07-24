@@ -32,8 +32,41 @@ public class MyClass {
     }
 
     // https://leetcode.com/problems/fibonacci-number/?envType=problem-list-v2&envId=recursion
+
+    /*
+    class Solution {
+      int [] memo = new int[31];
+
+      public int fib(int n) {
+         if(n <= 1)
+           return n;
+
+         if(memo[n] != 0)
+             return memo[n];
+
+         return memo[n] = fib(n - 1) + fib(n - 2);
+      }
+    }
+    */
+
     // https://leetcode.com/problems/power-of-two/
-    // https://www.geeksforgeeks.org/problems/reverse-a-stack/1
+    /*
+    class Solution {
+    public boolean isPowerOfTwo(int n) {
+        if(n == 0)
+           return false;
+
+        if(n == 1)
+           return true;
+
+        if(n % 2 == 0)
+           return isPowerOfTwo(n / 2);
+        else
+           return false;
+    }
+}
+    */
+
 
     public static void main(String [] args) {
         int sum = 0;

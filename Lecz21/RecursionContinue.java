@@ -2,6 +2,7 @@ package Lecz21;
 
 // https://www.geeksforgeeks.org/problems/reverse-a-stack/1
 
+
 /*
 class Solution {
 

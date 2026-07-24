@@ -1,6 +1,4 @@
-package MyClass;
-
-import java.sql.SQLOutput;
+package Lecz20;
 
 public class MyClass {
 

@@ -105,14 +105,6 @@ class Solution {
 
 */
 
-// https://leetcode.com/problems/permutations/submissions/1916710797/
-// https://leetcode.com/problems/finding-3-digit-even-numbers/
-// https://leetcode.com/problems/merge-two-sorted-lists/
-// https://leetcode.com/problems/longest-palindromic-substring/
-// https://leetcode.com/problems/longest-common-subsequence/submissions/1916275503/
-
-
-
 public class RecursionContinue {
 
     static int fib(int n) {

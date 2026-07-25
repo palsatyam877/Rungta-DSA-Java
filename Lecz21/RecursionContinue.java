@@ -32,7 +32,7 @@ class Solution {
 
 */
 
-// https://www.geeksforgeeks.org/problems/delete-middle-element-of-a-stack/1
+    // https://www.geeksforgeeks.org/problems/delete-middle-element-of-a-stack/1
 
 /*
 class Solution {
@@ -131,3 +131,19 @@ public class RecursionContinue {
         System.out.println(fib(6));
     }
 }
+
+/*
+0 I I I I
+0 2 2 I I
+0 2 2 5 5
+I I 2 5 5
+I I I I 4
+*/
+
+/*
+0 I I I I
+0 2 I I I
+0 2 3 I I
+I I 3 6 I
+I I I I 5
+*/

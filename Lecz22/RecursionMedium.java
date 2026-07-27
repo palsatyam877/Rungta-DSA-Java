@@ -8,6 +8,6 @@ package Lecz22;
 
 public class RecursionMedium {
     public static void main(String[] args) {
-        System.out.println("Jai Maa Bhavani");
+
     }
 }

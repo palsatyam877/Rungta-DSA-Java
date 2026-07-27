@@ -2,6 +2,7 @@ package Lecz22;
 
 // https://leetcode.com/problems/permutations/
 
+// Recursive
 /*
 class Solution {
     public List<List<Integer>> f(int N) {
@@ -52,6 +53,49 @@ class Solution {
         }
 
         return ans;
+    }
+}
+*/
+
+// Iterative
+/*
+class Solution {
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> Ans = new ArrayList<>();
+        Ans.add(new ArrayList<>(List.of(1)));
+
+        for (int k = 2; k <= nums.length; ++k) {
+            int sz = Ans.size();
+
+            for (int i = 0; i < sz; ++i) {
+                List<Integer> c = Ans.get(i);
+                c.add(k);
+
+                List<Integer> prev = new ArrayList<>();
+                prev = c;
+
+                for (int j = c.size() - 1; j >= 1; --j) {
+                    ArrayList<Integer> c1 = new ArrayList<>();
+                    c1.addAll(prev);
+
+                    int a = c1.get(j), b = c1.get(j - 1);
+                    c1.set(j - 1, a);
+                    c1.set(j, b);
+
+                    prev = c1;
+
+                    Ans.add(c1);
+                }
+            }
+        }
+
+        for (int i = 0; i < Ans.size(); ++i) {
+            for (int j = 0; j < Ans.get(i).size(); ++j) {
+                Ans.get(i).set(j, nums[Ans.get(i).get(j) - 1]);
+            }
+        }
+
+        return Ans;
     }
 }
 

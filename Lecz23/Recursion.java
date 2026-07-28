@@ -70,6 +70,103 @@ class Solution {
 */
 
 // https://leetcode.com/problems/merge-two-sorted-lists/
+
+// Forwaerd
+/*
+class Solution {
+    public void F(ListNode ls1 , ListNode ls2 , ListNode ans) {
+        if((ls1 == null) && (ls2 == null)) {
+            ans.next = null;
+            return;
+        } else if(ls1 == null) {
+            ans.next = ls2;
+            ans = ans.next;
+            F(ls1 , ls2.next , ans);
+            //
+        } else if(ls2 == null) {
+            ans.next = ls1;
+            ans = ans.next;
+            F(ls1.next , ls2 , ans);
+            //
+        } else {
+            if(ls1.val <= ls2.val ) {
+                ans.next = ls1;
+                ans = ans.next;
+                F(ls1.next , ls2 , ans);
+            } else {
+                ans.next = ls2;
+                ans = ans.next;
+                F(ls1 , ls2.next , ans);
+            }
+        }
+    }
+
+    public ListNode mergeTwoLists(ListNode ls1, ListNode ls2) {
+        if(ls1 == null)
+            return ls2;
+
+        if(ls2 == null)
+            return ls1;
+
+        ListNode ans = null;
+
+        if(ls1.val <= ls2.val) {
+            ans = ls1;
+            F(ls1.next , ls2 , ans);
+        } else {
+            ans = ls2;
+            F(ls1 , ls2.next , ans);
+        }
+
+        return ans;
+    }
+}
+*/
+
+// Backward Order
+/*
+class Solution {
+    public ListNode F(ListNode ls1 , ListNode ls2) {
+        if((ls1 == null) && (ls2 == null)) {
+            return null;
+        } else if(ls1 == null) {
+            ls2.next = F(ls1 , ls2.next);
+            return ls2;
+        } else if(ls2 == null) {
+            ls1.next = F(ls1.next , ls2);
+            return ls1;
+        } else {
+            if(ls1.val <= ls2.val ) {
+                ls1.next =  F(ls1.next , ls2);
+                return ls1;
+            } else {
+                ls2.next = F(ls1 , ls2.next);
+                return ls2;
+            }
+        }
+    }
+
+    public ListNode mergeTwoLists(ListNode ls1, ListNode ls2) {
+        if(ls1 == null)
+            return ls2;
+
+        if(ls2 == null)
+            return ls1;
+
+        if(ls1.val <= ls2.val) {
+            ls1.next = F(ls1.next , ls2);
+            return ls1;
+        } else {
+            ls2.next = F(ls1 , ls2.next );
+            return ls2;
+        }
+    }
+}
+
+*/
+
+
+
 // https://leetcode.com/problems/longest-palindromic-substring/
 // https://leetcode.com/problems/longest-common-subsequence/
 

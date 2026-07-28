@@ -165,10 +165,32 @@ class Solution {
 
 */
 
+// https://leetcode.com/problems/longest-common-subsequence/
+
+/*
+class Solution {
+   int [][] dp;
+
+    public int longestCommonSubsequence(String t1, String t2) {
+        int n = t1.length() , m = t2.length();
+        dp = new int[n + 1][m + 1];
+        dp[0][0] = 0;
+
+        for(int i = 1; i <= n; ++i)
+          for(int j = 1; j <= m; ++j)
+                if(t1.charAt(i - 1) == t2.charAt(j - 1))
+                   dp[i][j] = dp[i - 1][j - 1] + 1;
+                else
+                   dp[i][j] = Math.max(dp[i - 1][j] , dp[i][j - 1]);
+
+         return dp[n][m];
+    }
+}
+
+*/
 
 
 // https://leetcode.com/problems/longest-palindromic-substring/
-// https://leetcode.com/problems/longest-common-subsequence/
 
 public class Recursion {
     public static void main(String [] args) {

@@ -101,11 +101,6 @@ class Solution {
 
 */
 
-// https://leetcode.com/problems/finding-3-digit-even-numbers/
-// https://leetcode.com/problems/merge-two-sorted-lists/
-// https://leetcode.com/problems/longest-palindromic-substring/
-// https://leetcode.com/problems/longest-common-subsequence/
-
 import java.util.*;
 public class RecursionMedium {
     public static void main(String[] args) {

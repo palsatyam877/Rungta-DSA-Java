@@ -32,6 +32,41 @@ class Solution {
 
 // https://leetcode.com/problems/longest-palindromic-substring/
 
+// Recursive
+/*
+class Solution {
+    public boolean f(int i , int j , String s) {
+            if(j - i + 1 <= 2)
+                return s.charAt(i) == s.charAt(j);
+
+            if(s.charAt(i) == s.charAt(j))
+              return f(i + 1 , j - 1 , s);
+            else
+              return false;
+    }
+
+    public String longestPalindrome(String s) {
+        int n = s.length();
+
+        StringBuilder ans = new StringBuilder("");
+
+        for(int len = n; len >= 1; --len) {
+            for(int i = 0; i + len - 1 < n; ++i) {
+                if(f(i , i + len  - 1 , s)) {
+                    for(int k = i; k <= i + len - 1; ++k)
+                        ans.append(s.charAt(k));
+
+                     return ans.toString();
+                }
+            }
+        }
+
+        return "";
+    }
+}
+*/
+
+
 // https://www.geeksforgeeks.org/problems/tower-of-hanoi-1587115621/1
 
 public class RoadToDp {

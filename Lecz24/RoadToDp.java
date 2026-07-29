@@ -9,6 +9,5 @@ package Lecz24;
 
 public class RoadToDp {
     public static void main(String [] args) {
-        System.out.println("Jai Maa Bhavani");
     }
 }

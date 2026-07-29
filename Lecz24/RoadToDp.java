@@ -66,8 +66,66 @@ class Solution {
 }
 */
 
+/*
+class Solution {
+
+    public String longestPalindrome(String s) {
+        int n = s.length();
+
+        boolean [][] dp = new boolean[n + 1][n + 1];
+
+        for(int i = 0; i <= n; ++i) {
+            dp[i][i] = true;
+
+            if(i + 1 < n)
+                if(s.charAt(i) == s.charAt(i + 1))
+                    dp[i][i + 1] = true;
+
+        }
+
+        for(int len = 3; len <= n; ++len) {
+            for(int i = 0; i + len - 1 < n; ++i) {
+                int l = i , r = i + len - 1;
+
+                if(s.charAt(i) == s.charAt(r))
+                    dp[l][r] = dp[l + 1][r - 1];
+            }
+        }
+
+        StringBuilder ans = new StringBuilder("");
+
+        for(int len = n; len >= 1; --len) {
+            for(int j = 0; j + len - 1 < n; ++j) {
+                int l = j , r = j + len - 1;
+
+                if(dp[j][j + len - 1]) {
+                    if(ans.length() < len) {
+                        for(int k = l; k <= r; ++k)
+                           ans.append(s.charAt(k));
+                    }
+                }
+            }
+        }
+
+        return ans.toString();
+    }
+}
+*/
+
 
 // https://www.geeksforgeeks.org/problems/tower-of-hanoi-1587115621/1
+
+/*
+class Solution {
+    public int towerOfHanoi(int n, int from, int to, int aux) {
+        // code here
+        if(n == 1)
+           return 1;
+
+        return towerOfHanoi(n - 1 , from , aux , to) + 1 + towerOfHanoi(n - 1 , aux , to , from);
+    }
+}
+*/
 
 public class RoadToDp {
     public static void main(String [] args) {

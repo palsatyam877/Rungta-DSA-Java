@@ -189,9 +189,6 @@ class Solution {
 
 */
 
-
-// https://leetcode.com/problems/longest-palindromic-substring/
-
 public class Recursion {
     public static void main(String [] args) {
         System.out.println("Hello World");

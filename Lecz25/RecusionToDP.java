@@ -152,6 +152,61 @@ class Solution {
 
 //   https://leetcode.com/problems/is-graph-bipartite/
 
+/*
+class Solution {
+    class Pair {
+        Integer node , color;
+
+        Pair(Integer node , Integer color) {
+            this.node = node;
+            this.color = color;
+        }
+    }
+
+    public boolean isBipartite(int[][] graph) {
+        ArrayDeque<Pair> qu = new ArrayDeque<>();
+
+        int n = graph.length;
+
+        int [] vis = new int[n + 1];
+
+        for(int i = 0; i <= n; ++i)
+            vis[i] = -1;
+
+
+     for(int p = 0; p < n; ++p) {
+        if(vis[p] != -1) continue;
+
+        qu.offer(new Pair( p , 1 ));
+
+        while(qu.size() > 0) {
+            Pair curr = qu.poll();
+            int node = curr.node , color = curr.color;
+
+            vis[node] = color;
+
+            for(int i = 0; i < graph[node].length; ++i) {
+                if(vis[graph[node][i]] != -1) {
+                    if(vis[graph[node][i]] == color)
+                       return false;
+                    continue;
+                }
+
+                if(color == 0)
+                   qu.offer(new Pair(graph[node][i] , 1));
+                else
+                   qu.offer(new Pair(graph[node][i] , 0));
+            }
+        }
+     }
+
+        return true;
+    }
+}
+
+*/
+
+
 public class RecusionToDP {
      public static void main(String [] args) {
          ArrayList<ArrayList<Integer>> input = new ArrayList<>();

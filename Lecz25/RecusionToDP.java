@@ -115,13 +115,88 @@ class Solution {
 
 /*********** Adjacency List *****/
 
+import java.util.*;
+
 /*********** Adjacency Matrix ****/
 
 //   https://leetcode.com/problems/find-if-path-exists-in-graph/
+/*
+class Solution {
+    public boolean dfs(int node , int des , boolean [] vis , ArrayList<ArrayList<Integer>> adj) {
+            boolean flag = node == des;
+            vis[node] = true;
+
+            for(Integer nxt : adj.get(node))
+                if(!vis[nxt])
+                    flag = flag | dfs(nxt , des , vis , adj);
+
+            return flag;
+    }
+
+    public boolean validPath(int n, int[][] E, int src, int des) {
+        boolean [] vis = new boolean[n + 1];
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+
+        for(int i = 0; i < n; ++i)
+           adj.add(new ArrayList<>());
+
+        for(int i = 0; i < E.length; ++i) {
+            adj.get(E[i][0]).add(E[i][1]);
+            adj.get(E[i][1]).add(E[i][0]);
+        }
+
+        return dfs(src , des , vis , adj);
+    }
+}
+*/
+
 //   https://leetcode.com/problems/is-graph-bipartite/
 
 public class RecusionToDP {
      public static void main(String [] args) {
-         System.out.println("Jai Maa Kaali");
+         ArrayList<ArrayList<Integer>> input = new ArrayList<>();
+
+         input.add(new ArrayList<>(List.of(0 , 4)));
+         input.add(new ArrayList<>(List.of(0 , 1)));
+         input.add(new ArrayList<>(List.of(1 , 4)));
+         input.add(new ArrayList<>(List.of(1 , 3)));
+         input.add(new ArrayList<>(List.of(1 , 2)));
+         input.add(new ArrayList<>(List.of(2 , 3)));
+         input.add(new ArrayList<>(List.of(4 , 3)));
+
+         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+
+         int node = 4;
+
+         for(int i = 0; i <= node; ++i)
+               adj.add(new ArrayList<>());
+
+         for(int i = 0; i < input.size(); ++i) {
+             int x = input.get(i).get(0) , y = input.get(i).get(1);
+
+             adj.get(x).add(y);
+             adj.get(y).add(x);
+         }
+
+         int ix = 0;
+
+         for(ArrayList<Integer> c : adj) {
+             System.out.print(ix++ + " -> ");
+             for (Integer y : c)
+                 System.out.print(y + " ");
+             System.out.println();
+         }
+
+         int [][] mat = new int[node + 1][node + 1];
+
+         for(int i = 0; i < input.size(); ++i)
+             mat[input.get(i).get(0)][input.get(i).get(1)] = mat[input.get(i).get(1)][input.get(i).get(0)] = 1;
+
+         System.out.println("------------------------------------------\n\n");
+         for(int i = 0; i <= node; ++i) {
+             for (int j = 0; j <= node; ++j)
+                 System.out.print(mat[i][j] + " ");
+             System.out.println();
+         }
      }
 }

@@ -41,6 +41,76 @@ class Solution {
 
 // https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/
 
+/*
+class Solution {
+    class Pair {
+        Node first , second;
+
+        Pair(Node first , Node second) {
+            this.first = first;
+            this.second = second;
+        }
+    }
+
+    public Pair F(Node curr) {
+        if(curr.next == null && curr.child == null) {
+            return new Pair(curr , curr);
+        }
+
+        if(curr.child == null) {
+            Pair c = F(curr.next);
+            Node H = c.first;
+            Node T = c.second;
+
+            curr.next = H;
+            H.prev = curr;
+
+            curr.child = null;
+            return new Pair(curr , T);
+        } else if(curr.next == null){
+            Pair c = F(curr.child);
+            Node H = c.first;
+            Node T = c.second;
+
+            curr.next = H;
+            H.prev = curr;
+            T.next = null;
+
+            curr.child = null;
+            return new Pair(curr , T);
+        } else {
+            Pair c = F(curr.child);
+            Node H = c.first;
+            Node T = c.second;
+
+            Node temp = curr.next;
+            curr.next = H;
+            H.prev = curr;
+
+            T.next = temp;
+            temp.prev = T;
+
+            c = F(curr.next);
+            H = c.first;
+            T = c.second;
+
+            curr.child = null;
+            return new Pair(curr , T);
+        }
+    }
+
+    public Node flatten(Node head) {
+        if(head == null)
+            return null;
+
+        F(head);
+
+        return head;
+    }
+}
+
+*/
+
 /*********** Graphs *************/
 
 /*********** Adjacency List *****/

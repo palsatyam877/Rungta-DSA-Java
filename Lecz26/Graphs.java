@@ -4,6 +4,74 @@ import Lecz12.Trees;
 import java.util.*;
 
 // https://www.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1
+
+/*
+class Solution {
+    class Pair implements Comparable<Pair>{
+        Integer wt , node;
+
+        Pair(Integer wt , Integer node) {
+            this.wt = wt;
+            this.node = node;
+        }
+
+        @Override
+        public int compareTo(Pair that) {
+            if(this.wt.compareTo(that.wt) == 0)
+                return this.node.compareTo(that.node);
+
+            return this.wt.compareTo(that.wt);
+        }
+    }
+
+    public int[] dijkstra(int V, int[][] E, int src) {
+        // code here
+        ArrayList<ArrayList<Pair>> adj = new ArrayList<>();
+
+        for(int i = 0; i < V; ++i)
+            adj.add(new ArrayList<Pair>());
+
+
+        for(int i = 0; i < E.length; ++i) {
+            int a = E[i][0] , b = E[i][1] , wt = E[i][2];
+
+            adj.get(a).add(new Pair(wt , b));
+            adj.get(b).add(new Pair(wt , a));
+        }
+
+        TreeSet<Pair> ms = new TreeSet<>();
+        ms.add(new Pair(0 , src));
+
+        int [] dis = new int [V];
+
+        for(int i = 0; i < V; ++i)
+            dis[i] = -1;
+
+        while(ms.size() > 0) {
+            Pair curr = ms.pollFirst();
+
+            int wt = curr.wt , node = curr.node;
+
+            if(dis[node] != -1)
+              continue;
+
+            dis[node] = wt;
+
+            for(Pair Nxt : adj.get(node)) {
+                int wt1 = Nxt.wt , nxtNode = Nxt.node;
+
+                if(dis[nxtNode] != -1) continue;
+
+                ms.add(new Pair( wt + wt1 , nxtNode));
+            }
+        }
+
+        return dis;
+    }
+}
+
+*/
+
 // https://leetcode.com/problems/rotting-oranges/
 // https://leetcode.com/problems/flood-fill/description/
 

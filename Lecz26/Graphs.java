@@ -72,9 +72,6 @@ class Solution {
 
 */
 
-// https://leetcode.com/problems/rotting-oranges/
-// https://leetcode.com/problems/flood-fill/description/
-
 public class Graphs {
     static class Pair implements Comparable<Pair> {
         Integer dis , node;
